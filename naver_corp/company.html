@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 - 네이버소개</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/main_header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer1.css">
+
+    <style>
+        .container {
+            padding: 80px 0px 0px;
+            /* 내용이 해더 밑으로 숨어버리기 때문에 패딩값 준다 */
+        }
+
+        /* 해더 밑에 location 영역 */
+        .location_list {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0px 0px 36px 30px;
+        }
+
+        .location_list>li {
+            float: left;
+            margin-top: -2px;
+            padding: 0 25px 0 0;
+        }
+
+        .location_list > li:hover, .location_list > li:focus{
+            text-decoration: underline;
+        }
+
+        .location_list > li:last-child:hover{
+            text-decoration: none;
+            
+        }
+        .location_list>li a,
+        .location_current {
+            font-size: 12px;
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            color: #878890;
+        }
+
+        .location_current {
+            color: #212121;
+        }
+
+        .location_list>li {
+            position: relative;
+        }
+
+        .location_list > li:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 5px;
+            height: 7px;
+            background: url(img/sprite.png)no-repeat;
+            -webkit-background-size: 474px 1250px;
+            background-size: 474px 1250px;
+            background-position: -103px 0;
+        }
+
+        .location_list > li:last-child:after{
+            display: none;
+        }
+
+
+        /* 네이버 소개 콘텐츠 영역 */
+        /* 네이버 소개-시작 부분 */
+        .content_intro {
+            text-align: center;
+        }
+
+        h2.intro_title {
+
+            font-family: NanumSquare-EB, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 42px;
+            color: #212121;
+            letter-spacing: -2.5px;
+            padding: 0 0 30px;
+        }
+
+        p.intro_text {
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 20px;
+            color: #333;
+            letter-spacing: -0.2px;
+            line-height: 32px;
+            padding: 0 0 25px;
+
+        }
+
+        /* 네이버 소개 사진 부분 */
+        .content_naver_spot {
+            position: relative;
+            overflow: hidden;
+            padding-top: 21%;
+            /* img style absolute */
+        }
+
+        .naver_spot {
+            width: 100%;
+        }
+
+        /* 네이버 소개- company profile 소개등등 */
+        .content_company {
+            margin-top: 54px;
+            max-width: 1120px;
+            margin: 74px auto 120px;
+        }
+
+        .naver_intro {
+            font-size: 0;
+        }
+
+
+        dt.company_name {
+            display: inline-block;
+            width: 23.5%;
+            vertical-align: top;
+            font-family: NanumSquare-EB, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 20px;
+            color: #333;
+            line-height: 27px;
+            letter-spacing: -0.2px;
+        }
+
+        dd.company_detail_container {
+            display: inline-block;
+            width: 76.5%;
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 15px;
+            color: #606167;
+        }
+
+        .company_detail_container>p {
+            line-height: 1.8;
+            letter-spacing: -0.1px;
+        }
+
+        .naver_intro > dl:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .naver_company_profile {
+            margin: 75px 0px;
+            font-size: 0;
+        }
+
+        .naver_company_profile dl>dd {
+            display: inline-block;
+            width: 76.5%;
+            font-size: 15px;
+            color: #606167;
+        }
+
+        .company_profile {
+            display: inline-block;
+            vertical-align: top;
+            width: 23.5%;
+            font-family: "NanumSquare-EB", "나눔고딕", "Dotum", "돋움", sans-serif;
+            font-size: 20px;
+            color: #333;
+            line-height: 27px;
+            letter-spacing: -0.2px;
+        }
+
+        table{
+            width: 100%;
+            table-layout: fixed;
+            /* 테이블은 작아지지 않는다 */
+            /* background-color: coral; */
+        }
+
+        table > tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            /* border: 1px solid blue; */
+        }
+
+        tbody > tr {
+            display: table-row;
+            /* border: 1px solid yellow; */
+        }
+
+        tbody > tr:first-child {
+            border-top: 1px solid #333;
+        }
+
+        tbody > tr > th {
+            height: 56px;
+            border-bottom: 1px solid #efefef;
+            font-family: NanumSquare-B, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 15px;
+            color: #333;
+            text-align: left;
+        }
+
+        tbody > tr > td {
+            height: 56px;
+            border-bottom: 1px solid #efefef;
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 15px;
+            color: #606167;
+            letter-spacing: -0.1px;
+        }
+
+        .naver_company_profile:after{
+            content:'';
+            display: block;
+            clear: both;
+        
+        }
+       
+    </style>
+  
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <!--header-->
+            <div class="header_wrap">
+                <h1 class="header_logo"><a href="index.html"><span class="blind">NAVER</span></a></h1>
+                <h2 class="blind">네이버 메인 메뉴</h2>
+                <nav>
+                    <ul class="gnb_menu">
+                        <li class="gnb_menu_list"><a href="company.html" class="gnb_menu_item">네이버</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="company.html"class="gnb_dropmenu_item"><strong>NAVER</strong></a></li>
+                                        <li><a href="company.html" class="gnb_dropmenu_item"><span class="depth">네이버 소개</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">주요연혁</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">수상내역</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>주요관계사</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>제휴제안</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">제휴제안 안내</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">제휴제안 등록</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">검토현황 조회</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="contact.html" class="gnb_dropmenu_item"><strong>CONTACT</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="" class="gnb_menu_item">서비스</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>Featured<br>Services</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>For<br>Business</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>For<br>Creators</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>For<br>Developers</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>ALL<br>SERVICE</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="projectflower.html" class="gnb_menu_item">가치실현</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="projectflower.html" class="gnb_dropmenu_item"><strong>프로젝트꽃</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>기업윤리</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">기업윤리규범</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">기업윤리
+                                                    상담센터</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="naverReports.html" class="gnb_dropmenu_item"><strong>프라이버시
+                                                    센터</strong></a></li>
+                                        <li><a href="naverReports.html" class="gnb_dropmenu_item"><span class="depth">네이버 리포트</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">개인정보보호</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">정보보호인증</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <!-- 동반성장이랑 환경이 같이 있어야하니까 사이의 li를 지워준다, 그러면 <li>안에 같이 들어간다 -->
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href="winwin.html" class="gnb_dropmenu_item"><strong>동반성장</strong></a></li>
+                                        <!-- </ul>
+                               
+                                    <ul class="gnb_dropmenu"> -->
+                                        <!--depth_blank classify로 멀티 클래스를 준다, 동반성장과 환경 사이에 갭을 만들기 위해 따로 또 클래스 만들어줬음-->
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>환경</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">데이터센터 각</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">네이버 사옥</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>With
+                                                    Naver</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">재단법인 해피빈</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">네이버 문화재단</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">커넥트재단</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">접근성</span></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">네이버
+                                                    라이브러리</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="" class="gnb_menu_item">홍보</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>보도자료</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>TV광고</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>미디어
+                                                    행사</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>커뮤니케이션
+                                                    채널</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="" class="gnb_menu_item">투자정보</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>기업지배구조</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">주주구성</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">이사회</span></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">정관</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <!--li 안에 ul이 세개 들어감, 공-주-제 같은 위치에 있기 때문에-->
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>공시정보</strong></a></li>
+                                        <!-- </ul>
+                                
+                                    <ul class="gnb_dropmenu"> -->
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>주가정보</strong></a></li>
+                                        <!-- </ul>
+                                
+                                    <ul class="gnb_dropmenu"> -->
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>제무제표</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>IR일정</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">IR행사</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">IR
+                                                    MEETING</span></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">주주총회</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>IR자료실</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">감사보고서</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">사업보고서</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">연차보고서</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">FAQ</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>결산공고</strong></a></li>
+                                    </ul>
+
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>공고</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list_recruit"><a href="" class="gnb_menu_item">채용</a></li>
+                    </ul>
+                    <!--gnb menu의 ul-->
+
+                </nav>
+
+                <h2 class="blind">언어선택</h2>
+                <div class="header_util">
+                    <div class="header_lang">
+                        <a href="">KOR</a>
+                        <a href="">ENG</a>
+                    </div>
+                    <!--header lang-->
+                    <div class="sitemap_box"></div>
+                    <!--sitemap box-->
+                </div>
+                <!--header_util-->
+            </div>
+            <!--header wrap-->
+        </header>
+        <!--header-end-->
+        
+        <div class="container">
+            <!--container-->
+            <div class="main_location">
+                <ul class="location_list">
+                    <li>
+                        <a href="index.html" class="location_list_item">홈
+                            <span class="blind">메인메뉴로 이동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="company.html" class="location_list_item">네이버
+                            <span class="blind">네이버 메뉴로 이동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="company.html" class="location_list_item">NAVER
+                            <span class="blind">네이버 메뉴로 이동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="location_current">네이버 소개</span>
+                    </li>
+                </ul>
+                <!--location_list-->
+            </div>
+            <!--main_location-->
+            <div class="main_content">
+                <div class="content_intro">
+                    <h2 class="intro_title">네이버 소개</h2>
+                    <p class="intro_text">네이버는 미래 기술을 누구나 손쉽게 사용할 수 있도록 기술플랫폼으러서의 변화를 추구하며, <br>
+                        수많은 개인과 다양한 파트너들이 성공이라는 꽃을 피울 수 있도록 경쟁력을 키우며 다가올 미래를 준비하겠습니다.</p>
+                </div>
+                <!--content_intro-->
+                <div class="content_naver_spot">
+                    <img src="img/naver_spot.jpg" class="naver_spot" alt="네이버 소개"
+                        style="position:absolute; left: 0; bottom: 0;">
+                </div>
+                <!--content_naver-->
+                <div class="content_company">
+                    <div class="naver_intro">
+                        <dl>
+                            <dt class="company_name">NAVER</dt>
+                            <dd class="company_detail_container">
+                                <p class="company_detail">
+                                    네이버(주)는 한국 최대 검색포털 네이버 뿐만 아니라, 전 세계 2억 명이 사용하고 있는 모바일 메신저 라인, 동영상 카메라 스노우, 디지털 만화
+                                    <br>
+                                    서비스 네이버웹툰 등을 서비스하고 있는 글로벌 ICT 기업입니다. 네이버는 인공지능, 로보틱스, 모빌리티 등 미래 기술에 대한 지속적인 연구개<br>
+                                    발을 통해 기술 플랫폼의 변화와 혁신을 추구하며 세계 각국의 수많은 이용자와 다양한 파트너들이 함께 성장할 수 있도록 노력하고 있습니다.</p>
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <!--naver_intro-->
+                    <div class="naver_company_profile">
+                        <dl>
+                            <dt class="company_profile">COMPANY<br>
+                                PROFILE</dt>
+                            <dd>
+                                <table>
+                                    <caption class="blind">COMPANY PROFILE 설명</caption>
+                                    <colgroup>
+                                        <col style="width: 160px">
+                                        <col style="max-width: 800px">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>설립연도</th>
+                                            <td>1999년 6월</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>본사 위치</th>
+                                            <td>경기도 성남시 분당구</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>주요서비스</th>
+                                            <td>온라인 검색포털, 모바일 메신저 플랫폼</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>주요사업</th>
+                                            <td>온라인 광고 및 콘텐츠 사업</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>해외법인</th>
+                                            <td>일본, 미국, 프랑스, 중국, 베트남, 대만, 태국, 인도네시아 외</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>매출액</th>
+                                            <td>4조 678억 원 (2017년)</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th>전체인력</th>
+                                            <td>2,793명 (본사 기준, 2017년 기준)</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!--naver_company_profile-->
+
+
+                </div>
+                <!--content_company-->
+
+                
+            </div>
+            <!--main_content-->
+        </div>
+        <!--container end-->
+
+        <footer>
+            <!--footer-->
+            <div class="footer_wrap">
+                <h1 class="footer_logo"><span class="blind">NAVER</span></h1>
+                <h2 class="blind">Footer 메뉴</h2>
+                <ul class="footer_menu">
+                    <li><a href="" class="footmenu_item">제휴제안</a></li>
+                    <li><a href="" class="footmenu_item">기업윤리 상담센터</a></li>
+                    <li><a href="" class="footmenu_item">개인정보 처리방침</a></li>
+                </ul>
+                <!--footer_menu-->
+
+                <h2 class="blind">자회사 바로가기</h2>
+                <div class="affiliate_box">
+                    <button type="button" class="btn_affiliate">자회사 바로가기</button>
+                    <ul class="footer_upmenu">
+                        <li class="affiliate_item"><a href=""><span>Line</span></a></li>
+                        <li class="affiliate_item"><a href="">
+                                <span">NAVER Labs</span>
+                            </a></li>
+                        <li class="affiliate_item"><a href=""><span>NBP</span></a></li>
+                        <li class="affiliate_item"><a href=""><span>SNOW</span></a></li>
+                        <li class="affiliate_item"><a href=""><span>Webtoon</span></a></li>
+                        <li class="affiliate_item"><a href=""><span>Works Mobile</span></a></li>
+                        <lli class="affiliate_item"><a href=""><span>NAVER FINANCIAL</span></a></li>
+
+                    </ul>
+                    <!--footer_upmenu-->
+                </div>
+                <!--affiliate_box-->
+                <p class="footer_copy">Copyright ⓒ <strong>NAVER Corp.</strong> All Rights Reserved.</p>
+            </div>
+            <!--footer wrap-->
+        </footer>
+        <!--footer end-->
+    </div>
+    <!--wrap-->
+</body>
+
+</html>

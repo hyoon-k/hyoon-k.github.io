@@ -1,0 +1,551 @@
+/* #wrap 안에 총 header 를 감싸는 부분 */
+#wrap {
+    min-width: 1120px;
+    min-height: 100%;
+    position: relative;
+}
+
+.header_wrap {
+    max-width: 1600px;
+    margin: 0 auto;
+    /* border: 1px solid gray; */
+    text-align: center;
+    position: relative;
+    /* header_util이 header.on 포지션 fixed 를 따라가고 있기 때문에, header_wrap에 기준 표시를 하면 그 기준을 따라감. */
+    /* border:1px solid tomato; */
+   
+}
+
+.header_wrap::after {
+    content:'';
+    display: block;
+    clear: both;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+    min-width: 1100px;
+    background-color: rgba(255, 255, 255, 0.97);
+    transition: top .4s ease-in-out;
+    -webkit-transition: top .4s ease-in-out;
+}
+
+header.on {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+}
+
+header.hide {
+    top: -80px;
+}
+
+/* 로고 영역 */
+h1.header_logo {
+    /* border: 1px solid blue; */
+    width: 87px;
+    height: 17px;
+    margin: 32px 0 0 32px;
+    background-image: url(../img/header_logo.png);
+    background-repeat: no-repeat;
+    float: left;
+    z-index: 9999;
+    position: absolute;
+}
+
+.header_logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* main 메뉴 영역*/
+nav {
+    /* border: 1px solid red; */
+    display: inline-block;
+}
+
+/* nav의 자식 영역 */
+ul.gnb_menu {
+    font-size: 0;
+    /* whitespace 없애는 용도, 그러면 메인 메뉴 탭이 사라짐 */
+    text-align: center;
+}
+
+/* ul의 자식 영역, 서브 메뉴 영역 (채용 포함) */
+li.gnb_menu_list,
+li.gnb_menu_list_recruit {
+    /* background-color: coral; */
+    display: inline-block;
+    font-size: 1rem;
+}
+
+/* main menu에 들어있는 아이 */
+a.gnb_menu_item {
+    display: block;
+    margin: 0 32px;
+    /* 메인 메뉴 사이 주기 위해 */
+    padding: 30px 0px 30px;
+    /* padding 을 넣는 이유는 근처에 커서만 닿아도 서브 메뉴가 열릴 수 있게 충분한 자리 주려고
+    지방을 넣어준다*/
+    font-size: 15px;
+    color: #333;
+    position: relative;
+    font-weight: 800;
+    font-family: NanumSquare-EB, 나눔고딕, 돋움, Dotum, sans-serif;
+}
+
+.gnb_menu .gnb_menu_list .gnb_menu_item:before,
+.gnb_menu .gnb_menu_list_recruit .gnb_menu_item:before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    height: 2px;
+    bottom: 20px;
+    width: calc(100% + 2px);
+    background-color: #1ec545;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+}
+
+.gnb_menu .gnb_menu_list:hover .gnb_menu_item:before,
+.gnb_menu .gnb_menu_list .gnb_menu_item:focus:before,
+.gnb_menu .gnb_menu_list_recruit:hover .gnb_menu_item:before,
+.gnb_menu .gnb_menu_list_recruit .gnb_menu_item:focus:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.gnb_menu .gnb_menu_list_recruit .gnb_menu_item:focus:after,
+.gnb_menu .gnb_menu_list_recruit .gnb_menu_item:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 31px;
+    width: 18px;
+    height: 18px;
+    background: url("../img/sprite.png") no-repeat;
+    -webkit-background-size: 474px 1250px;
+    background-size: 474px 1250px;
+    background-position: -59px 0;
+}
+
+/* Dropdown 영역 */
+.gnb_dropmenu_wrap {
+    display: none;
+    min-width: 1100px;
+    height: 276px;
+    background-color: #1ec545;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 80px;
+    text-align: center;
+    font-size: 0;
+    /* li에 공백 없애주기 위해, 하면 사라짐.. 그래서 li 부분에 
+    font-size 또 넣어줘야함 */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* 서브 메뉴들 위치 조정 영역 */
+.gnb_menu_list:hover .gnb_dropmenu_wrap {
+    display: block;
+}
+
+/* 서브 메뉴 드롭다운 했을 때 배치 영역 
+제목이 없는 li 영역*/
+.gnb_dropmenu_wrap>li {
+    display: inline-block;
+    width: 190px;
+    height: 276px;
+    padding-top: 28px;
+    font-size: 1rem;
+    vertical-align: top;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.gnb_dropmenu_wrap>li:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    /* 마지막 li한테만 border 값이 없어서 last-child라고 선언하고 준다
+    그냥 li 한테 주면 선 긁기가 일정하지 않음 */
+}
+
+
+.gnb_dropmenu_wrap>li:hover {
+    background-color: #0fb93c;
+    /* 제목이 없는 li 영역에서 마우스 hover 하면 초록색이 나옴 */
+}
+
+/* dropdown 메뉴 스타일 */
+.gnb_dropmenu>li {
+    margin: 0 0 5px;
+    font-size: 15px;
+    text-align: left;
+
+}
+
+.gnb_dropmenu a {
+    color: #fff;
+    font-size: 15px;
+}
+
+.gnb_dropmenu>li.depth_blank {
+    margin-bottom: 14px;
+}
+
+.classify {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 25px;
+    padding-top: 17px;
+    /* 위로 서로 밀기 위해 넣어준다 */
+}
+
+.classify:first-child {
+    border-top: 0px;
+    padding-top: 0px;
+}
+
+a.gnb_dropmenu_item {
+    display: block;
+    padding-left: 28px;
+    /* 서브메뉴 가운데 정렬 시키려면 inline에서 block으로 선언 */
+}
+
+/* 서브메뉴 마우스 hover했을 때 글씨 색깔 변화*/
+.gnb_dropmenu_item .depth {
+    color: rgba(255, 255, 255, 0.7);
+
+}
+
+.gnb_dropmenu_item .depth:hover {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: underline;
+}
+
+
+/* 언어 지원과 사이트맵 박스 영역 */
+/* <div class="header_util">
+                    <div class="header_lang">
+                        <a href="">KOR</a>
+                        <a href="">ENG</a>
+                    </div><!--header lang-->
+                    <div class="sitemap_box"></div><!--sitemap box-->
+                </div><!--header_util--> */
+.header_util {
+    /* 부모 header.on이 포지션 fixed이므로 width랑 height 값을 지정해줘야함 */
+    /* border: 1px solid blue; */
+    position: absolute;
+    z-index: 1000;
+    right: 50px;
+    top: 30px;
+    width: 144px;
+    height: 23px;
+    /* margin: 29px 25px 0 0; */
+   
+}
+
+
+/* KOR | ENG 영역 */
+.header_lang {
+    /* border: 1px solid red; */
+    display: inline-block;
+    vertical-align: middle;
+    left: 0;
+    /* margin: 0 41px 0 0; */
+    /* 옆으로 더 밀어주는 용도 */
+    font-size: 13px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.header_lang a {
+    font-size: 12px;
+    font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+    color: #3333;
+}
+
+.header_lang a:first-child {
+    color: #333;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    padding-right: 10px;
+}
+
+.header_lang a:last-child {
+    color: #333;
+    padding-left: 10px;
+
+}
+
+/* 사이트맵 햄버거 icon */
+.sitemap_box {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 24px;
+    height: 23px;
+    vertical-align: middle;
+    z-index: 1000;
+    position: absolute;
+    right: 0;
+    
+}
+
+.sitemap_box > .btn_sitemap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 0;
+    outline: 0;
+    background-color: white;
+}
+
+.header_util .btn_sitemap .btn_line.first,
+.header_util .btn_sitemap .btn_line.middle,
+.header_util .btn_sitemap .btn_line.last{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.sitemap_box .btn_sitemap .btn_line.first {
+    top: 4px;
+    
+}
+
+.sitemap_box .btn_sitemap .btn_line.middle {
+    top: 10px;
+    
+}
+
+.sitemap_box .btn_sitemap .btn_line.last {
+    bottom: 5px;
+    
+}
+
+.sitemap_box .btn_sitemap:hover .btn_line.first,
+.header_util .btn_sitemap:hover .btn_line.middle,
+.header_util .btn_sitemap:hover .btn_line.last {
+    background-color: #00cd53;
+    transition: all 0.5s ease;
+}
+
+/* site_map */
+
+
+.site_map_menu {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 115px 35px 150px;
+    
+}
+
+.site_map_menu::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.site_map_menu_list:first-child {
+    margin: 0;
+}
+.site_map_menu_list{
+    /* border: 1px solid red; */
+    float: left;
+    width: 160px;
+    margin-left: 50px;
+}
+
+.site_map_menu_list::after {
+    content:'';
+    display: block;
+    clear: both;
+}
+
+.site_map_menu_list > .menu_title {
+    /* border: 1px solid yellow; */
+    display: block;
+    padding-bottom: 31px;
+    font-family: NanumSquare-EB, 나눔고딕, 돋움, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    position: relative;
+}
+
+.site_map_menu_list > .menu_title::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+}
+.menu_container {
+    padding: 24px 0 0;
+}
+.menu_container > .menu_list.depth {
+    /* border: 1px solid gray; */
+    line-height: 1.2;
+}
+
+.menu_container > .menu_list.depth strong span{
+    display: inline-block;
+    position: relative;
+    font-family: NanumSquare-B, 나눔고딕, 돋움, sans-serif;
+    font-size: 15px;
+    color: #fff;
+}
+
+
+
+.menu_container > .menu_list {
+    margin: 8px 0 0;
+    /* font-family: NanumSquare,나눔고딕,돋움,sans-serif; */
+    line-height: 1.2;
+   
+}
+
+.menu_container > .menu_list span.depth {
+    /* display: inline-block;
+    position: relative; */
+    font-family: "NanumSquare-L", "나눔고딕", "Dotum", "돋움", sans-serif;
+    font-size: 14px;
+    opacity: .8;
+    color: #fff;
+}
+
+.menu_container > .menu_list span.depth:hover {
+    opacity: 1;
+    text-decoration: underline;
+    transition: all 0.8s ease;
+    
+
+}
+
+.site_map_menu_list .menu_list.depth >.btn_link :after{
+    /* border: 1px solid red; */
+    content: '';
+    display: block;
+    position: absolute;
+    right: -23px;
+    top: -1px;
+    width: 18px;
+    height: 18px;
+    background: url(../img/sprite.png) no-repeat;
+    -webkit-background-size: 474px 1300px;
+    background-size: 474px 1300px;
+    background-position: -81px 0;
+}
+
+
+
+    
+
+/* header_util "on" 추가시 창을 덮는 작동 */
+h1.header_logo.on {
+    background: url(../img/header_logo_v2.png) no-repeat;
+
+}
+.header_util.on .site_map{
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    min-width: 1100px;
+    background-color: #0fb93c;
+    text-align: left;
+}
+
+.header_util.on {
+    height: 80px;
+    background-color: #0fb93c;
+}
+
+.header_util.on .btn_sitemap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #0fb93c;
+}
+
+.site_map {
+    display: none;
+}
+
+header.deactive .site_map_menu {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 35px 35px 150px;
+    transition: all 0.5s ease;
+}
+
+.header_util.deactive {
+    top: -81px;
+}
+
+.header_util.on .sitemap_box > .btn_sitemap >.btn_line.first {
+    top: -10px;
+    transform: translateY(20px) rotate(-45deg);
+    transition: all 0.5s ease;
+    background-color: #fff;
+}
+
+.header_util.on .sitemap_box > .btn_sitemap >.btn_line.middle {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.header_util.on .sitemap_box > .btn_sitemap >.btn_line.last {
+    bottom: -9px;
+    transform: translateY(-20px) rotate(45deg);
+    transition: all 0.5s ease;
+    background-color:#fff;
+}
+
+.header_util.on .header_lang a:first-child,
+.header_util.on .header_lang a:last-child{
+    color: #fff;
+}
+
+
+.header_util.on+.site_map_dimmed {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(58, 62, 80, 0.97);
+}
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
