@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+.mobile{display: none;}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1003;
+    background: linear-gradient(rgba(48, 47, 45, 1) 0%, rgba(48, 47, 45, 0.5) 100%);
+}
+
+header:hover{
+    background-color: #222;
+}
+
+header.hide {
+    background:linear-gradient(to bottom, rgba(48, 47, 45, 1) 0%, rgba(48, 47, 45, 1) 100%);
+}
+header.hide .header_wrap {
+    height: 60px;
+}
+
+header.hide .header_wrap .header_logo {
+    position: relative;
+	z-index: 1001;
+	display: block;
+	max-width: 120px;
+	height: 34px;
+	left: 50px;
+	top: 12px;
+}
+
+header.hide .header_wrap .header_logo a {
+    background-size: 120px 34px;
+}
+
+header.hide .header_wrap .utility_wrap {
+    top: 6px;
+}
+
+header .header_wrap {
+    height: 160px;
+    text-align: center;
+}
+
+.header_wrap .header_logo {
+    position: relative;
+    display: inline-block;
+    top: 42px;
+    z-index: 1001;
+}
+
+.header_wrap .header_logo a {
+    margin-left: 42px;
+    display: block;
+    width: 160px;
+    height: 46px;
+    background: url(../img/logo.svg)no-repeat;
+}
+
+
+.utility_wrap {
+    display: inline-block;
+    position: absolute;
+    top: 42px;
+    right: 17px;
+    z-index: 1001;
+}
+
+.utility_wrap>.util_box {
+    display: block;
+    float: left;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    /* width: 221px; */
+
+}
+
+.util_box>li {
+    float: left;
+    margin-left: 36px;
+}
+
+.util_box>li a {
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Baloo Da 2';
+    text-decoration: none;
+}
+
+.utility_wrap>.search {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url(../img/util_search_renew.svg)no-repeat;
+    border: none;
+    margin-top: 4px;
+}
+
+.gnb_wrap {
+    /* border: 1px solid blue; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+
+}
+
+.gnb_wrap>.gnb_menu {
+    /* border: 1px solid yellow; */
+    margin-left: -86px;
+    font-size: 0;
+    text-align: center;
+
+}
+
+.gnb_wrap>.gnb_menu>li {
+    /* border: 1px solid red; */
+    display: inline-block;
+    height: 60px;
+
+}
+
+
+.gnb_wrap>.gnb_menu>li>a {
+    color: #fff;
+    padding: 18px 26px 0 26px;
+    font-size: 16px;
+    font-family: 'Baloo Da 2';
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+/* 드롭메뉴 */
+
+.gnb_wrap>.gnb_menu>li.on>.gnb_drop {
+    display: block;
+}
+
+.gnb_wrap>.gnb_menu>li.on {
+    background-color: #fff;
+}
+
+.gnb_wrap>.gnb_menu>li.on>a {
+    color: black;
+    opacity: 1;
+    font-weight: 600;
+}
+
+.gnb_drop {
+    display: none;
+    background-color: #fff;
+    /* border: 1px solid limegreen; */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 60px 0px;
+}
+
+.gnb_drop_wrap {
+    max-width: 1178px;
+    margin: 0 auto;
+    overflow: hidden;
+
+
+}
+
+.gnb_drop_wrap>.drop_menu {
+    float: left;
+    width: 50%;
+    text-align: left;
+    /* border: 1px solid palevioletred; */
+
+}
+
+.gnb_drop_wrap>.drop_menu>.drop_menu_list {
+    float: left;
+    width: 196px;
+    margin-right: 60px;
+    overflow: hidden;
+
+}
+
+.gnb_drop_wrap>.drop_menu>.drop_menu_list>li {
+    margin-bottom: 7px;
+    /* border: 1px solid navy; */
+
+}
+
+.gnb_drop_wrap>.drop_menu>.drop_menu_list>li>span {
+    border-bottom: 1px solid #333;
+    margin-bottom: 14px;
+    font-size: 16px;
+    padding-bottom: 7px;
+    font-weight: 600;
+}
+
+.drop_menu>.drop_menu_list>li>span,
+.drop_menu>.drop_menu_list>li>a {
+    color: #222;
+    font-size: 14px;
+    position: relative;
+    display: block;
+    opacity: .8;
+
+}
+
+.drop_menu>.drop_menu_list>li>a:hover {
+    opacity: 1;
+    color: rgb(143, 82, 55);
+    font-weight: 600;
+    text-decoration: underline;
+
+}
+
+
+.gnb_drop_wrap>.drop_banner {
+    float: right;
+    width: 50%;
+    /* border: 1px solid red; */
+    /* background-color: salmon; */
+
+}
+
+.gnb_drop_wrap>.drop_banner>ul>li:first-child {
+    margin-left: 0;
+}
+
+.gnb_drop_wrap>.drop_banner>ul>li {
+    /* border: 1px solid yellow; */
+    display: inline-block;
+    margin-left: 30px;
+    width: 44.2%;
+}
+
+.gnb_drop_wrap>.drop_banner>ul>li>p {
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    font-size: 14px;
+    /* text-align: left; */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+@media screen and (min-width: 851px){
+    .pc {display: block;}
+    }
+    
