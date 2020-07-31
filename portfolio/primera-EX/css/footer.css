@@ -1,0 +1,138 @@
+
+footer {position: relative;}
+footer > .btn-top {
+    background:url(../img/btn_top.svg)no-repeat left top;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #d3d3d3;
+    right: 50px;
+    top: -70px; 
+    
+}
+
+.footer_wrap .sns_wrap{
+    padding: 50px 0;
+    text-align: center;
+}
+.footer_wrap .sns_wrap > li{
+    display: inline-block;
+    margin: 0 30px;
+}
+.footer_wrap .sns_wrap > li > a{
+    display: block;
+    /* width: 30px;
+    height: 30px; */
+
+}
+
+.footer_wrap .sns_wrap > li > a > img {
+    width: 30px;
+    height: 30px;
+}
+
+
+.footer_wrap .footer_inner {
+    position: relative;
+    padding: 27px 0 40px 354px;
+}
+.footer_wrap .footer_inner .footer_logo {
+    position: absolute;
+    top: 30px;
+    left: 85px;
+}
+.footer_wrap .footer_inner .footer_menu > ul{
+    display: flex; 
+}
+.footer_wrap .footer_inner .footer_menu > ul > li::after{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    margin: 0 8px 0 12px;
+    vertical-align: middle;
+    background-color: #999
+}
+
+.footer_wrap .footer_inner .footer_menu > ul > li:last-child::after {
+    display: none;
+}
+
+.footer_wrap .footer_inner .footer_menu > ul > li > a{
+    color: #222;
+    font-size: 14px;
+    text-decoration: none;
+
+}
+.footer_wrap .footer_inner .footer_info > p{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer_inner > .mark {
+    /* border: 1px solid red; */
+    display: inline-block;
+    position: absolute;
+    top: 26px;
+    right: 495px;
+}
+
+.footer_inner > .mark > a > img {
+    width: 60px;
+}
+
+.footer_wrap .footer_inner .lang_box{
+    position: absolute;
+    top: 30px;
+    right: 85px;
+}
+
+.lang_box > a {
+    border: 1px solid #a5a298;
+    padding: 13px 20px;
+    display: block;
+    width: 222px;
+    height: 46px;
+    text-decoration: none;
+}
+
+.lang_box > a > span {
+   font-size: 14px;
+   color: #222222;
+   background:url(../img/btn_arrow_up.svg)no-repeat;
+   background-position: right 6px;
+   display: block;
+}
+
+.lang_box > .lang_option{
+    display: none;
+}
+
+.lang_box.on > a > span {
+   background:url(../img/btn_arrow_down.svg)no-repeat;
+   background-position: right 6px;
+   display: block;
+}
+.lang_box.on > .lang_option{
+    display: block;
+    border: 1px solid #a5a298;
+    position: absolute;
+    width: 100%;
+    top: auto;
+    bottom: 45px;
+    padding: 20px 24px;
+    z-index: 99;
+   
+}
+
+
+.lang_box.on > .lang_option > li+ li{
+    margin-top: 10px;
+}
+
+.lang_box.on > .lang_option > li > a > span {
+    color: #222;
+    font-size: 14px;
+}
+
