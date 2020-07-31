@@ -27,11 +27,12 @@
         }
 
         .container{background-color: rgb(243, 242, 242); height: 580px}
-        .container > .title {text-align:center;padding: 5px; color: gray; font-size: 25px; text-decoration: underline;}
+        .container > .title {text-align:center;padding: 5px; color: gray; font-size: 25px; font-family: Nanum Gothic, sans-serif, dotum; }
         .portfolio_wrap { overflow: hidden; width: 70%; margin: 0 auto;}
-        .portfolio_wrap >li {float: left;}
-        .portfolio_wrap >li:first-child {margin-left: 300px;}
-        .portfolio_wrap > li:last-child {height: 225px; background-color: white; margin-left: 40px;}
+        .portfolio_wrap >li {border: 1px solid lightgoldenrodyellow;float: left; width: 33.33333%; text-align: center; background: white;}
+        .portfolio_wrap > li:nth-child(2) {height: 225px;}
+        .portfolio_wrap > li:last-child {width: 300px; height: 225px; }
+        .portfolio_wrap > li+li {margin-left: 20px;}
        
         
     </style>
@@ -52,7 +53,7 @@
             </div>
         </header>
         <div class="container">
-            <h2 class="title">Portfolio</h2>
+            <h2 class="title">PORTFOLIO</h2>
             <ul class="portfolio_wrap">
                 <li>
                     <a href="portfolio/naver/index.html">
@@ -62,6 +63,11 @@
                 <li>
                     <a href="portfolio/primera-EX/index.html">
                         <img src="img/primera.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="" >
                     </a>
                 </li>
             </ul>
