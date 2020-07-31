@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가치실현 - 동반성장</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/main_header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer1.css">
+    <style>
+        .container {
+            padding: 80px 0px 110px;
+            /* 내용이 해더 밑으로 숨어버리기 때문에 패딩값 준다 */
+        }
+
+        /* 해더 밑에 location 영역 */
+        .location_list {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0px 0px 36px 30px;
+        }
+
+        .location_list>li {
+            float: left;
+            margin-top: -2px;
+            padding: 0 25px 0 0;
+        }
+
+        .location_list>li a,
+        .location_current {
+            font-size: 12px;
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            color: #878890;
+        }
+
+        .location_current {
+            color: #212121;
+        }
+
+        .location_list>li {
+            position: relative;
+        }
+
+        .location_list>li:hover,
+        .location_list>li:focus {
+            text-decoration: underline;
+        }
+
+        .location_list>li:last-child:hover {
+            text-decoration: none;
+
+        }
+
+        .location_list>li:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 5px;
+            height: 7px;
+            background: url(img/sprite.png)no-repeat;
+            -webkit-background-size: 474px 1250px;
+            background-size: 474px 1250px;
+            background-position: -103px 0;
+        }
+
+        .location_list>li:last-child:after {
+            display: none;
+        }
+
+        /* 프로젝트 꽃 콘텐츠 영역 */
+        /*시작 부분 */
+        .content_intro {
+            text-align: center;
+        }
+
+        h2.intro_title {
+
+            font-family: NanumSquare-EB, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 42px;
+            color: #212121;
+            letter-spacing: -2.5px;
+            padding: 0 0 30px;
+        }
+
+        p.intro_text {
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 20px;
+            color: #333;
+            letter-spacing: -0.2px;
+            line-height: 32px;
+            padding: 0 0 25px;
+        }
+
+        /* 프로젝트 꽃 사진 부분 */
+        .content_develop_spot {
+            position: relative;
+            overflow: hidden;
+            padding-top: 21%;
+            /* img style absolute */
+        }
+
+        .develop_spot {
+            width: 100%;
+        }
+
+        .content_development_container {
+            margin-top: 100px;
+            max-width: 1120px;
+            margin: 74px auto 120px;
+        }
+
+        .content_development_item {
+            margin-top: 68px;
+        }
+
+        dt.item_title {
+            /* border: 1px solid red; */
+            display: inline-block;
+            width: 23.5%;
+            vertical-align: top;
+            font-family: NanumSquare-EB, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 20px;
+            color: #333;
+            line-height: 27px;
+            letter-spacing: -0.2px;
+
+        }
+
+        dd.item_text {
+            /* border: 1px solid blue; */
+            display: inline-block;
+            width: 75.5%;
+            vertical-align: top;
+            font-family: NanumSquare, 나눔고딕, 돋움, Dotum, sans-serif;
+            font-size: 14.5px;
+            color: #606167;
+            letter-spacing: 0;
+            line-height: 1.8;
+        }
+
+        .content_development_list:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .btn_development {
+
+            margin-top: 68px;
+            text-align: right;
+        }
+
+        .btn_development > a {
+            display: inline-block;
+            vertical-align: top;
+            
+        }
+
+        .partners_line {
+            margin-right: 20px;
+        }
+
+        .partners_line .btn_text {
+            font-size: 15px;
+            font-family: NanumSquare-B, 나눔고딕, 돋움, Dotum, sans-serif;
+            color: #212121;
+            line-height: 46px;
+            margin-right: 8px;
+        }
+
+        .develop_program .btn_text {
+            font-size: 15px;
+            font-family: NanumSquare-B, 나눔고딕, 돋움, Dotum, sans-serif;
+            color: #212121;
+            line-height: 46px;
+            margin-right: 8px;
+        }
+
+        .partners_line .icon_arrow {
+            display: inline-block;
+            position: relative;
+            width: 46px;
+            height: 46px;
+            background-color: #bac2cd;
+            border-radius: 100%;
+            vertical-align: top;
+
+        }
+
+        .partners_line .icon_arrow:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 30%;
+            top: 35%;
+            width: 18px;
+            height: 19px;
+            background: url(img/sprite.png)no-repeat;
+            -webkit-background-size: 474px 1250px;
+            background-size: 474px 1250px;
+            background-position: -230px 0;
+
+        }
+
+        .develop_program .icon_arrow {
+            display: inline-block;
+            position: relative;
+            width: 46px;
+            height: 46px;
+            background-color: #bac2cd;
+            border-radius: 100%;
+            vertical-align: top;
+
+        }
+
+        .develop_program .icon_arrow:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 30%;
+            top: 35%;
+            width: 18px;
+            height: 19px;
+            background: url(img/sprite.png)no-repeat;
+            -webkit-background-size: 474px 1250px;
+            background-size: 474px 1250px;
+            background-position: -230px 0;
+
+        }
+
+        .partners_line .icon_arrow:hover,
+        .partners_line .icon_arrow:focus,
+        .develop_program .icon_arrow:hover,
+        .develop_program .icon_arrow:focus {
+            background-color: #1ec545;
+            transition: background-color .3s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <!--header-->
+            <div class="header_wrap">
+                <h1 class="header_logo"><a href="index.html"><span class="blind">NAVER</span></a></h1>
+                <h2 class="blind">네이버 메인 메뉴</h2>
+                <nav>
+                    <ul class="gnb_menu">
+                        <li class="gnb_menu_list"><a href="company.html" class="gnb_menu_item">네이버</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="company.html"
+                                                class="gnb_dropmenu_item"><strong>NAVER</strong></a></li>
+                                        <li><a href="company.html" class="gnb_dropmenu_item"><span class="depth">네이버
+                                                    소개</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">주요연혁</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">수상내역</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>주요관계사</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>제휴제안</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">제휴제안 안내</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">제휴제안 등록</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">검토현황 조회</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="contact.html"
+                                                class="gnb_dropmenu_item"><strong>CONTACT</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="" class="gnb_menu_item">서비스</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>Featured<br>Services</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>For<br>Business</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>For<br>Creators</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>For<br>Developers</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>ALL<br>SERVICE</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="projectflower.html" class="gnb_menu_item">가치실현</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="projectflower.html"
+                                                class="gnb_dropmenu_item"><strong>프로젝트꽃</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>기업윤리</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">기업윤리규범</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">기업윤리
+                                                    상담센터</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="naverReports.html"
+                                                class="gnb_dropmenu_item"><strong>프라이버시
+                                                    센터</strong></a></li>
+                                        <li><a href="naverReports.html" class="gnb_dropmenu_item"><span
+                                                    class="depth">네이버 리포트</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">개인정보보호</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">정보보호인증</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <!-- 동반성장이랑 환경이 같이 있어야하니까 사이의 li를 지워준다, 그러면 <li>안에 같이 들어간다 -->
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href="winwin.html"
+                                                class="gnb_dropmenu_item"><strong>동반성장</strong></a></li>
+                                        <!-- </ul>
+                               
+                                    <ul class="gnb_dropmenu"> -->
+                                        <!--depth_blank classify로 멀티 클래스를 준다, 동반성장과 환경 사이에 갭을 만들기 위해 따로 또 클래스 만들어줬음-->
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>환경</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">데이터센터 각</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">네이버 사옥</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>With
+                                                    Naver</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">재단법인 해피빈</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">네이버 문화재단</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">커넥트재단</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">접근성</span></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">네이버
+                                                    라이브러리</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="" class="gnb_menu_item">홍보</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>보도자료</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>TV광고</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>미디어
+                                                    행사</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href="" class="gnb_dropmenu_item"><strong>커뮤니케이션
+                                                    채널</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list"><a href="" class="gnb_menu_item">투자정보</a>
+                            <ul class="gnb_dropmenu_wrap">
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>기업지배구조</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">주주구성</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">이사회</span></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">정관</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <!--li 안에 ul이 세개 들어감, 공-주-제 같은 위치에 있기 때문에-->
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>공시정보</strong></a></li>
+                                        <!-- </ul>
+                                
+                                    <ul class="gnb_dropmenu"> -->
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>주가정보</strong></a></li>
+                                        <!-- </ul>
+                                
+                                    <ul class="gnb_dropmenu"> -->
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>제무제표</strong></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>IR일정</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">IR행사</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">IR
+                                                    MEETING</span></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">주주총회</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank"><a href=""
+                                                class="gnb_dropmenu_item"><strong>IR자료실</strong></a></li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">감사보고서</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">사업보고서</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">연차보고서</span></a>
+                                        </li>
+                                        <li><a href="" class="gnb_dropmenu_item"><span class="depth">FAQ</span></a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>결산공고</strong></a></li>
+                                    </ul>
+
+                                    <ul class="gnb_dropmenu">
+                                        <li class="depth_blank classify"><a href=""
+                                                class="gnb_dropmenu_item"><strong>공고</strong></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="gnb_menu_list_recruit"><a href="" class="gnb_menu_item">채용</a></li>
+                    </ul>
+                    <!--gnb menu의 ul-->
+
+                </nav>
+
+                <h2 class="blind">언어선택</h2>
+                <div class="header_util">
+                    <div class="header_lang">
+                        <a href="">KOR</a>
+                        <a href="">ENG</a>
+                    </div>
+                    <!--header lang-->
+                    <div class="sitemap_box"></div>
+                    <!--sitemap box-->
+                </div>
+                <!--header_util-->
+            </div>
+            <!--header wrap-->
+        </header>
+        <!--header-end-->
+
+        <div class="container">
+            <!--container-->
+            <div class="main_location">
+                <ul class="location_list">
+                    <li>
+                        <a href="index.html" class="location_list_item">홈
+                            <span class="blind">메인메뉴로 이동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projectflower.html" class="location_list_item">가치실현
+                            <span class="blind">가치실현 메뉴로 이동</span>
+                        </a>
+                    </li>
+                    <li>
+                        <span class="location_current">동반성장</span>
+                    </li>
+                </ul>
+                <!--location_list-->
+            </div>
+            <!--main_location-->
+            <div class="main_content">
+                <div class="content_intro">
+                    <h2 class="intro_title">동반성장</h2>
+                    <p class="intro_text">네이버는 다양한 파트너들과 협력하며<br>
+                        건강한 인터넷 생태계를 구축하기 위해 노력하고 있습니다.</p>
+                </div>
+                <!--content_intro-->
+                <div class="content_develop_spot">
+                    <img src="img/develop_spot.jpg" style="position: absolute; left:0; bottom:0;" class="develop_spot"
+                        alt="동반성장">
+                </div>
+                <!--content_develop_spot-->
+
+                <div class="content_development_container">
+                    <ul class="content_development_list">
+                        <li class="content_development_item">
+                            <dl>
+                                <dt class="item_title">공정한 거래를 위한 <br>
+                                    시스템 구축</dt>
+                                <dd class="item_text">네이버는 파트너를 경영활동의 동반자로서 존중하고, 상호협력을 통해 동반성장을 추구할 것을 약속하는 '윤리실천 협약'을
+                                    2015년 부터 시행<br>
+                                    해오고 있으며, 동반성장 4대 실천사항을 준수하고, 기업윤리 및 정보보호를 위한 제도를 운영하고 있습니다. 또한 전자구매시스템을 통해 투<br>
+                                    명성 및 공정성 확보를 위한 지침을 준수하고 있습니다.</dd>
+                            </dl>
+                        </li>
+
+                        <li class="content_development_item">
+                            <dl>
+                                <dt class="item_title">파트너를 위한 맞춤형<br>
+                                    프로그램 지원</dt>
+                                <dd class="item_text">네이버는 주요 파트너를 대상으로 금융, 경영, 교육, 판로확대 등 다양한 분야의 지원 프로그램을 운영, 파트너의
+                                    경영활동에 필요한 제반 사항<br>
+                                    을 지원하고 있습니다.</dd>
+
+                            </dl>
+                        </li>
+
+                        <li class="content_development_item">
+                            <dl>
+                                <dt class="item_title">파트너 커뮤니케이션<br>
+                                    채널 운영</dt>
+                                <dd class="item_text">네이버는 동반성장 전담조직을 운영하고 파트너들이 직접 제안 및 문의를 할 수 있는 소통창구인 파트너스라인을 운영하고
+                                    있습니다. 또한 네<br>
+                                    이버의 동반성장 비전을 공유하는 자리인 파트너스데이를 정기적으로 개최하는 등 파트너들과의 원활한 소통을 위한 노력을 지속하고 있습니<br>
+                                    다.</dd>
+                            </dl>
+                        </li>
+
+                    </ul>
+                    <!--content_development_list-->
+                    <div class="btn_development">
+                        <a href="" target="_blank" class="partners_line">
+                            <span class="btn_text">파트너스라인 바로가기</span>
+                            <span class="icon_arrow change"></span>
+                        </a>
+                        <a href="" target="_blank" class="develop_program">
+                            <span class="btn_text">동반성장 프로그램 바로가기</span>
+                            <span class="icon_arrow change"></span>
+                        </a>
+                    </div>
+                </div>
+                <!--content_development_container-->
+            </div>
+            <!--ㅡmain_content-->
+        </div>
+        <!--container_end-->
+
+
+
+        <footer>
+            <!--footer-->
+            <div class="footer_wrap">
+                <h1 class="footer_logo"><span class="blind">NAVER</span></h1>
+                <h2 class="blind">Footer 메뉴</h2>
+                <ul class="footer_menu">
+                    <li><a href="" class="footmenu_item">제휴제안</a></li>
+                    <li><a href="" class="footmenu_item">기업윤리 상담센터</a></li>
+                    <li><a href="" class="footmenu_item">개인정보 처리방침</a></li>
+                </ul>
+                <!--footer_menu-->
+
+                <h2 class="blind">자회사 바로가기</h2>
+                <div class="affiliate_box">
+                    <button type="button" class="btn_affiliate">자회사 바로가기</button>
+                    <ul class="footer_upmenu">
+                        <li class="affiliate_item"><a href=""><span>Line</span></a></li>
+                        <li class="affiliate_item"><a href="">
+                                <span">NAVER Labs</span>
+                            </a></li>
+                        <li class="affiliate_item"><a href=""><span>NBP</span></a></li>
+                        <li class="affiliate_item"><a href=""><span>SNOW</span></a></li>
+                        <li class="affiliate_item"><a href=""><span>Webtoon</span></a></li>
+                        <li class="affiliate_item"><a href=""><span>Works Mobile</span></a></li>
+                        <lli class="affiliate_item"><a href=""><span>NAVER FINANCIAL</span></a></li>
+
+                    </ul>
+                    <!--footer_upmenu-->
+                </div>
+                <!--affiliate_box-->
+                <p class="footer_copy">Copyright ⓒ <strong>NAVER Corp.</strong> All Rights Reserved.</p>
+            </div>
+            <!--footer wrap-->
+        </footer>
+        <!--footer end-->
+    </div>
+    <!--wrap-->
+</body>
+
+</html>
