@@ -17,10 +17,7 @@ header .header_wrap .utility_wrap >.utility_wrap>.search{width: 53px; height: 50
 header button.side_btn{width: 40px; height: 40px; border:none; background-color:rgba(48, 47, 45, 1);display: block; position:absolute;top: 5px; left: 13px;}
 /* button.side_btn 에 on이 붙을 때 */
 
-
-
-
-
+.main_slide .bx-wrapper .bx-prev, .bx-next {display:none;}
 .main_banner .main_banner_inner{margin: 25px 0; background:url(../img/img_2020803_banner_event_mo_1.png)no-repeat center 0;background-size: cover; text-align: center; height: 170px;}
 .event_banner .text_box>.text_box_inner>strong {font-size: 26px;}
 .best_seller { margin: 0 auto; width: 100%; max-width: 1280px; padding: 0 20px 26px;}
