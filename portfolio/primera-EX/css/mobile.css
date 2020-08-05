@@ -14,7 +14,13 @@ header.hide .header_wrap .utility_wrap {top: 0; right: 0;}
 header .header_wrap .utility_wrap {top: 0; right: 0;}
 header .header_wrap .utility_wrap >.util_box{display:none;}
 header .header_wrap .utility_wrap >.utility_wrap>.search{width: 53px; height: 50px;background-position: center 0;}
-button.side_btn{width: 40px; height: 40px; border:none; background-color:rgba(48, 47, 45, 1);display: block; position:absolute;top: 5px; left: 13px;}
+header button.side_btn{width: 40px; height: 40px; border:none; background-color:rgba(48, 47, 45, 1);display: block; position:absolute;top: 5px; left: 13px;}
+/* button.side_btn 에 on이 붙을 때 */
+
+
+
+
+
 .main_banner .main_banner_inner{margin: 25px 0; background:url(../img/img_2020630_banner_event_mo.png)no-repeat center 0;background-size: cover; text-align: center; height: 170px;}
 .event_banner .text_box>.text_box_inner>strong {font-size: 26px;}
 .best_seller { margin: 0 auto; width: 100%; max-width: 1280px; padding: 0 20px 26px;}
@@ -35,7 +41,15 @@ button.side_btn{width: 40px; height: 40px; border:none; background-color:rgba(48
 .recomm_item> .recomm_list > .recomm_title >.mobile {display: block;}
 .recomm_item .recomm_list .bx-wrapper .bx-prev {display: none;}
 .recomm_item .recomm_list .bx-wrapper .bx-next {display: none;}
-.recomm_slider_item > a > .recomm_tit {font-size: 14px;}
+.recomm_item .recomm_list .recomm_slider .recomm_slider_item > a >img{
+    border: 1px solid red;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+}
+.recomm_item .recomm_list .recomm_slider .recomm_slider_item > a > .recomm_tit {font-size: 14px;}
 .recomm_item .recomm_list .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {display: none;}
 .recomm_item .recomm_list .bx-wrapper .bx-controls-auto{display: none;}
 .main_store .store_banner .store_banner_inner {background:url(../img/img_banner_store_m.jpg)no-repeat center 0; height: 170px; }
