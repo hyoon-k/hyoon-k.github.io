@@ -21,7 +21,7 @@ header button.side_btn{width: 40px; height: 40px; border:none; background-color:
 
 
 
-.main_banner .main_banner_inner{margin: 25px 0; background:url(../img/img_2020630_banner_event_mo.png)no-repeat center 0;background-size: cover; text-align: center; height: 170px;}
+.main_banner .main_banner_inner{margin: 25px 0; background:url(../img/img_2020803_banner_event_mo_1.png)no-repeat center 0;background-size: cover; text-align: center; height: 170px;}
 .event_banner .text_box>.text_box_inner>strong {font-size: 26px;}
 .best_seller { margin: 0 auto; width: 100%; max-width: 1280px; padding: 0 20px 26px;}
 .best_seller > .best_title{padding: 48px 0 0; margin: 0; font-size: 30px;font-weight: bold;  text-align: center;color: #222;}
@@ -33,6 +33,7 @@ header button.side_btn{width: 40px; height: 40px; border:none; background-color:
 .best_seller > .best_product_list>li>a .img-area>img {width: 100%;}
 .best_seller> .best_product_list>li>a>.txt_box{margin-top: 18px;}
 .best_seller> .best_product_list>li>a>.txt_box>.cont-tit{font-size: 14px;color: #222;}
+.best_seller> .best_product_list>li>a>.txt_box>.cont-tit .mobile {display: block;}
 .best_seller> .best_product_list>li>a>.txt_box>p.cont-desc {font-size: 14px; color: #666;}
 .best_seller> .best_product_list>li>a>.txt_box> .grade-area.renew-grade-area {margin-top: 10px; height: 15px;}
 .best_seller> .best_product_list>li>a>.txt_box> .grade-area.renew-grade-area >.grade {width: 50px; background-size: 10px 10px;}
@@ -41,16 +42,30 @@ header button.side_btn{width: 40px; height: 40px; border:none; background-color:
 .recomm_item> .recomm_list > .recomm_title >.mobile {display: block;}
 .recomm_item .recomm_list .bx-wrapper .bx-prev {display: none;}
 .recomm_item .recomm_list .bx-wrapper .bx-next {display: none;}
-.recomm_item .recomm_list .recomm_slider .recomm_slider_item > a >img{
-    border: 1px solid red;
-    max-width: 850px;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    height: auto;
-}
+.recomm_item .recomm_list .bx-wrapper .recomm_slider .recomm_slider_item > a {margin: 0 auto; max-width: 850px;}
 .recomm_item .recomm_list .recomm_slider .recomm_slider_item > a > .recomm_tit {font-size: 14px;}
-.recomm_item .recomm_list .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {display: none;}
+.recomm_item .recomm_list .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-page {display: block;}
+.recomm_item .recomm_list .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:first-child > a{
+    border-radius: 0;
+    width: 120px;
+    height: 2px;
+    opacity: 0.8;
+    margin: 0;
+}
+.recomm_item .recomm_list .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:nth-child(2) > a{
+    border-radius: 0;
+    width: 120px;
+    height: 2px;
+    opacity: 0.8;
+    margin: 0;
+}
+.recomm_item .recomm_list .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:last-child > a{
+    border-radius: 0;
+    width: 120px;
+    height: 2px;
+    opacity: 0.8;
+    margin: 0;
+}
 .recomm_item .recomm_list .bx-wrapper .bx-controls-auto{display: none;}
 .main_store .store_banner .store_banner_inner {background:url(../img/img_banner_store_m.jpg)no-repeat center 0; height: 170px; }
 .main_store .store_banner_inner .text_box .text_box_inner strong{font-size: 26px;}

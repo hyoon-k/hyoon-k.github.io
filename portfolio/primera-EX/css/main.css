@@ -54,58 +54,6 @@
     color: #fff;
 }
 
-.slide_progressbar {
-    position: absolute;
-    width: 580px;
-    left: 130px;
-    bottom: 305px;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.2);
-
-
-}
-
-.slide_progressbar .fill {
-    position: absolute;
-    height: 4px;
-    background-color: black;
-}
-
-
-.slide_progressbar .fill.btn1 {
-    left: 0px;
-}
-
-.slide_progressbar .fill.btn2 {
-    left: 96.66px;
-}
-
-.slide_progressbar .fill.btn3 {
-    left: 193.32px;
-}
-
-.slide_progressbar .fill.btn4 {
-    left: 289.98px;
-}
-
-.slide_progressbar .fill.btn5 {
-    left: 386.64px;
-}
-
-.slide_progressbar .fill.btn6 {
-    left: 485px;
-    background-color: white;
-    opacity: 1;
-}
-
-/* .slide_info_box > .btn_control {
-    width: 10px;
-    height: 10px;
-    border: 1px solid red;
-    position: relative;
-} */
-
-
 
 /* bx slider부분 */
 .main_slide .bx-wrapper {
@@ -159,13 +107,35 @@
     top: 50%;
 }
 
+.main_slide .bx-wrapper .bx-pager {
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    text-align: left;
+    left: 130px;
+}
+
+.main_slide .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item > a {
+    border-radius: 0;
+    width: 93.33px;
+    height: 4px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.main_slide .bx-wrapper .bx-controls-auto {
+    position: absolute;
+    top: 67%;
+    left: 42%;
+}
+
 /* 이벤트 베너 */
 .main_banner_inner {
     /* border: 1px solid red; */
     position: relative;
     height: 200px;
     margin: 55px 0;
-    background: url(../img/img_20200630_banner_event_pc.jpg)no-repeat;
+    background: url(../img/img_2020803_banner_event_pc_2.png)no-repeat;
     background-position: center 0;
     background-size: cover;
     text-align: center;
@@ -373,7 +343,7 @@
 .recomm_item .recomm_list .bx-wrapper .bx-controls-auto{
     /* border: 1px solid red; */
     position: absolute;
-    left: 77%;
+    left: 74%;
     margin-bottom: 17px;
 }
 .recomm_slider_item > a > img{
