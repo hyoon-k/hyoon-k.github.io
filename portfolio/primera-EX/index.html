@@ -377,7 +377,7 @@
                     <span class="gnb-bar"></span>
                     <span class="blind">사이드 메뉴열기</span>
                 </button>
-                <header>
+                <header class="side">
                     <div class="side_header">
                         <a href="">매장찾기</a>
                         <a href="">로그인</a>
@@ -433,12 +433,12 @@
                     <!--mobile_sns_wrap-->
                     <div class="side_footer_menu">
                         <ul>
-                            <li><a href="">회사소개</a></li>
-                            <li><a href="">서비스이용약관</a></li>
-                            <li><a href="">UGC이용약관</a></li>
-                            <li><a href="">개인정보처리방침</a></li>
-                            <li><a href="">영상정보처리방침</a></li>
-                            <li><a href="">뷰티포인트/a></li>
+                            <li><a href="">회사소개 |</a></li>
+                            <li><a href="">서비스이용약관 |</a></li>
+                            <li><a href="">UGC이용약관 |</a></li>
+                            <li><a href="">개인정보처리방침 |</a></li>
+                            <li><a href="">영상정보처리방침 |</a></li>
+                            <li><a href="">뷰티포인트</a></li>
                         </ul>
                         <div class="side_custom_service">
                             <p>고객서비스센터(수신자요금부담)080-023-5454
@@ -455,7 +455,7 @@
                     </div>
                     <!--side_footer_menu-->
 
-                </footer>
+                </footer><!--side_nav_footer-->
             </nav>
         </header>
         <div class="container">
@@ -806,7 +806,6 @@
         const $sideBtn = document.querySelector('.header_wrap > .side_btn');
 
         $sideBtn.addEventListener('click', btnClick);
-
         function btnClick(ev) {
             ev.preventDefault();
             if ($header.classList.contains('active')) {
@@ -814,9 +813,7 @@
             } else {
                 $header.classList.add('active');
             }
-
         }
-
 
         //슬라이더
         $('.slide').bxSlider({
