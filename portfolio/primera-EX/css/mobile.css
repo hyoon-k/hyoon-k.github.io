@@ -15,9 +15,9 @@ header .header_wrap .utility_wrap {top: 0; right: 0;}
 header .header_wrap .utility_wrap >.util_box{display:none;}
 header .header_wrap .utility_wrap >.utility_wrap>.search{width: 53px; height: 50px;background-position: center 0;}
 header button.side_btn{width: 40px; height: 40px; border:none; background-color:rgba(48, 47, 45, 1);display: block; position:absolute;top: 5px; left: 13px;}
-/* button.side_btn 에 on이 붙을 때 */
+header.active #side_nav {display: block;}
 
-.main_slide .bx-wrapper img.pc {display: none;}
+
 .main_slide .bx-wrapper img.mobile {display: block;}
 .main_slide .bx-wrapper .bx-prev, .bx-next {display:none;}
 .main_slide .bx-wrapper .bx-pager {position: absolute; bottom: 9%; left: 30px;}

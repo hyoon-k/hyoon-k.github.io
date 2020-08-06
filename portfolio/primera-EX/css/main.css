@@ -352,10 +352,9 @@
 }
 
 .recomm_item .recomm_list .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-    /* border: 1px solid red; */
     position: absolute;
-    left: 75%;
-    margin-bottom: 17px;
+    left: 910px;
+    bottom: -3%;
 }
 
 .recomm_slider_item>a>img {

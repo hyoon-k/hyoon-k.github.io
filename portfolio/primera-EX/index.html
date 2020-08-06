@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,18 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
+
 <body>
     <div id="wrap">
         <header class="">
+            <!--active 모바일 메뉴시-->
             <div class="header_wrap">
                 <h1 class="header_logo">
                     <a href="index.html"></a>
@@ -366,9 +371,91 @@
                         </div>
                     </li>
                 </ul>
-                <div class="sidenav">
-                    
-                </div><!--sidenav-->
+            </nav>
+            <nav id="side_nav" class="mobile">
+                <button type="button" class="btn_sidebar">
+                    <span class="gnb-bar"></span>
+                    <span class="blind">사이드 메뉴열기</span>
+                </button>
+                <header>
+                    <div class="side_header">
+                        <a href="">매장찾기</a>
+                        <a href="">로그인</a>
+                    </div>
+                </header>
+                <div class="side_nav_menu">
+                    <ul>
+                        <li class="side_nav_menu_list">
+                            <a href="">베스트&신제품</a>
+                        </li>
+                        <li class="side_nav_menu_list">
+                            <a href="">페이셜</a>
+                        </li>
+                        <li class="side_nav_menu_list">
+                            <a href="">바디&헤어</a>
+                        </li>
+                        <li class="side_nav_menu_list">
+                            <a href="">반려동물</a>
+                        </li>
+                        <li class="side_nav_menu_list">
+                            <a href="">이벤트</a>
+                        </li>
+                        <li class="side_nav_menu_list">
+                            <a href="">프리메라 스토리</a>
+                        </li>
+                        <li class="side_nav_menu_list">
+                            <a href="">프리메라 경험하기</a>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="side_nav_footer">
+                    <div class="mobile_sns_wrap">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="img/sns_facebook_renew.png" alt="facebook">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <img src="img/sns_youtube_renew.png" alt="youtube">
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <img src="img/sns_instagram_renew.png" alt="instagram">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--mobile_sns_wrap-->
+                    <div class="side_footer_menu">
+                        <ul>
+                            <li><a href="">회사소개</a></li>
+                            <li><a href="">서비스이용약관</a></li>
+                            <li><a href="">UGC이용약관</a></li>
+                            <li><a href="">개인정보처리방침</a></li>
+                            <li><a href="">영상정보처리방침</a></li>
+                            <li><a href="">뷰티포인트/a></li>
+                        </ul>
+                        <div class="side_custom_service">
+                            <p>고객서비스센터(수신자요금부담)080-023-5454
+                                <br>
+                                (월~금 : AM 09:00 ~ PM 06:00)
+                            </p>
+                            <small class="copyright">© AMOREPACIFIC CORPORATION. All rights reserved.</small>
+                        </div>
+                        <div class="side-mark">
+                            <a href="">
+                                <img src="img/wa_mark_renew_grey.png">
+                            </a>
+                        </div>
+                    </div>
+                    <!--side_footer_menu-->
+
+                </footer>
             </nav>
         </header>
         <div class="container">
@@ -377,7 +464,8 @@
                     <div class="slide_item">
                         <a href="" class="slide_info_box" style="display: block;">
                             <img src="img/img_20200629_main_kv_my_wish_skin_seed_pot_pc.jpg" alt="슬라이드 이미지" class="pc">
-                            <img src="img/img_20200629_main_kv_my_wish_skin_seed_pot_mo.jpg" alt="슬라이드 이미지" class="mobile">
+                            <img src="img/img_20200629_main_kv_my_wish_skin_seed_pot_mo.jpg" alt="슬라이드 이미지"
+                                class="mobile">
                             <div class="text_box">
                                 <h2 class="slide_title">
                                     마이 위시 스킨 씨드 팟
@@ -713,6 +801,23 @@
 
     </div>
     <script>
+        //모바일 전용 side_nav
+        const $header = document.querySelector('header');
+        const $sideBtn = document.querySelector('.header_wrap > .side_btn');
+
+        $sideBtn.addEventListener('click', btnClick);
+
+        function btnClick(ev) {
+            ev.preventDefault();
+            if ($header.classList.contains('active')) {
+                $header.classList.remove('active');
+            } else {
+                $header.classList.add('active');
+            }
+
+        }
+
+
         //슬라이더
         $('.slide').bxSlider({
             pager: true,
