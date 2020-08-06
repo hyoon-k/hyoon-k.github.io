@@ -20,14 +20,8 @@ header button.side_btn{width: 40px; height: 40px; border:none; background-color:
 .main_slide .bx-wrapper img.pc {display: none;}
 .main_slide .bx-wrapper img.mobile {display: block;}
 .main_slide .bx-wrapper .bx-prev, .bx-next {display:none;}
-.main_slide .bx-wrapper .bx-pager {position: absolute; bottom: 10%; left: 30px;}
-.main_slide .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item>a {
-    border-radius: 0;
-    width: 80%;
-    height: 2px;
-    opacity: 0.8;
-    margin: 0;
-}
+.main_slide .bx-wrapper .bx-pager {position: absolute; bottom: 9%; left: 30px;}
+.main_slide .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item>a {border-radius: 0;width: 60px; height: 2px;opacity: 0.8; margin: 0;} 
 .main_slide .bx-wrapper .bx-controls-auto {display: none;}
 .main_slide .slide .slide_item .slide_info_box .text_box {padding: 0 30px; bottom: 80px;}
 .main_slide .slide .slide_item .slide_info_box .text_box>h2.slide_title{font-size: 30px;}
