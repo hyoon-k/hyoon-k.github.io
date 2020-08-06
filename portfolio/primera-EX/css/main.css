@@ -133,13 +133,12 @@
     opacity: 0.8;
     margin: 0;
 }
-
-/* .main_slide .bx-wrapper .bx-controls-auto {
+.main_slide .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
     position: absolute;
-    top: 67%;
-    left: 40%;
-} */
-
+    left: 630px;
+    bottom: 17%;
+    width: 35px;
+}
 /* 이벤트 베너 */
 .main_banner_inner {
     /* border: 1px solid red; */
@@ -352,7 +351,7 @@
     margin: 0;
 }
 
-.recomm_item .recomm_list .bx-wrapper .bx-controls-auto {
+.recomm_item .recomm_list .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
     /* border: 1px solid red; */
     position: absolute;
     left: 75%;
