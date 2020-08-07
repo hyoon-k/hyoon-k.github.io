@@ -452,8 +452,12 @@
                                 <img src="img/wa_mark_renew_grey.png">
                             </a>
                         </div>
-                    </div>
-                    <!--side_footer_menu-->
+                        <div class="mobile_lang_box">
+                            <a href="">
+                                <span>LANGUAGE | 한국/한국어</span>
+                            </a>
+                        </div>
+                    </div><!--side_footer_menu-->
 
                 </footer><!--side_nav_footer-->
             </nav>
@@ -803,17 +807,35 @@
     <script>
         //모바일 전용 side_nav
         const $header = document.querySelector('header');
-        const $sideBtn = document.querySelector('.header_wrap > .side_btn');
+        const $openBtn = document.querySelector('.header_wrap > .side_btn');
+        const $closeBtn = document.querySelector('#side_nav > .btn_sidebar');
 
-        $sideBtn.addEventListener('click', btnClick);
-        function btnClick(ev) {
-            ev.preventDefault();
-            if ($header.classList.contains('active')) {
+        $openBtn.addEventListener('click', openClick);
+        $closeBtn.addEventListener('click', closeClick);
+
+        function openClick(e){
+            e.preventDefault();
+            if ($header.classList.contains('active')){
                 $header.classList.remove('active');
-            } else {
-                $header.classList.add('active');
-            }
+            }else {$header.classList.add('active');}
         }
+
+        function closeClick(e){
+            e.preventDefault();
+            if ($header.classList.contains('active')){
+                $header.classList.remove('active');
+            }else {$header.classList.add('active');}
+        }
+
+        // $sideBtn.addEventListener('click', btnClick);
+        // function btnClick(ev) {
+        //     ev.preventDefault();
+        //     if ($header.classList.contains('active')) {
+        //         $header.classList.remove('active');
+        //     } else {
+        //         $header.classList.add('active');
+        //     }
+        // }
 
         //슬라이더
         $('.slide').bxSlider({
