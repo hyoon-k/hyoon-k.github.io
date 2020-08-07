@@ -15,7 +15,6 @@ header .header_wrap .utility_wrap {top: 0; right: 0;}
 header .header_wrap .utility_wrap >.util_box{display:none;}
 header .header_wrap .utility_wrap >.utility_wrap>.search{width: 53px; height: 50px;background-position: center 0;}
 header button.side_btn{width: 40px; height: 40px; border:none; background-color:rgba(48, 47, 45, 1);display: block; position:absolute;top: 5px; left: 13px;}
-header 
 /*헤더 active 시 css (사이드 메뉴) */
 header.active #side_nav {display: block; position: fixed; top: 0; left: 0%; right: 0%; bottom: 0; z-index: 2000; background-color: #fff;}
 header.active .btn_sidebar {display: block; background:#3d3935; position: absolute; top: 0; left: 0; width: 55px; height: 60px; z-index: 3000; border: none;}
