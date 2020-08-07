@@ -86,8 +86,7 @@ footer > .btn-top {
     position: absolute;
     top: 30px;
     right: 85px;
-    transition: 0.3s ease-in-out;
-    
+    transition: 0.3s ease-in-out; 
 }
 
 .lang_box > a {
