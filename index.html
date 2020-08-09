@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
         /* reset css */
         * {
@@ -58,7 +59,7 @@
         .header_wrap>nav>ul>li>a {
             font-size: 22px;
             font-family: 'Rubik', sans-serif;
-            color: #191970
+            color: #191970;
         }
 
         /* container 시작  */
@@ -290,7 +291,7 @@
             font-family: 'Rubik', sans-serif;
         }
 
-        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail > a > span {
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail>a>span {
             background-color: #4996d1;
             display: inline-block;
             color: #fff;
@@ -301,21 +302,12 @@
             margin: 5px 10px 5px 0;
         }
 
-        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail > a > span::before{
-            border-color:  #4996d1;
-            border-right-width: 2px;
-            border-top-width: 2px;
-            border-style: solid;
-            border-width: 0;
-            transition: all 0.25s;
-            content:'';
-            position: absolute;
-            height: 24px;
-            width: 24px;
-            right: -5px;
-            top: -5px;
-            border-radius: 2px;
-            
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail>a>span:hover {
+            background-color: #fff;
+            color: #222;
+            font-weight: bold;
+            transition: all 0.3s linear;
+
         }
 
         .main_content_wrap>.clone_codes_box>.pf_naver::after {
@@ -372,7 +364,7 @@
             font-family: 'Rubik', sans-serif;
         }
 
-        .main_content_wrap>.clone_codes_box>.pf_primera>.web_detail > a > span {
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_detail>a>span {
             background-color: #4996d1;
             display: inline-block;
             color: #fff;
@@ -381,6 +373,14 @@
             position: relative;
             border-radius: 5px;
             margin: 5px 10px 5px 0px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_detail>a>span:hover {
+            background-color: #fff;
+            color: #222;
+            font-weight: bold;
+            transition: all 0.3s linear;
+
         }
 
         .main_content_wrap>.clone_codes_box>.pf_primera::after {
@@ -434,7 +434,7 @@
             font-family: 'Rubik', sans-serif;
         }
 
-        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_detail > a > span {
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_detail>a>span {
             background-color: #4996d1;
             display: inline-block;
             color: #fff;
@@ -443,6 +443,14 @@
             position: relative;
             border-radius: 5px;
             margin: 5px 10px 5px 0px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_detail>a>span:hover {
+            background-color: #fff;
+            color: #222;
+            font-weight: bold;
+            transition: all 0.3s linear;
+
         }
 
         .main_content_wrap>.clone_codes_box>.pf_airbnb::after {
@@ -455,6 +463,7 @@
         .main_content_wrap>.clone_codes_box>.contact {
             margin-top: 135px;
             text-align: center;
+            margin-bottom: 30px;
         }
 
         .main_content_wrap>.clone_codes_box>.contact>h3 {
@@ -464,23 +473,34 @@
             font-weight: 300;
             margin-top: 0;
         }
-        
+
         .main_content_wrap>.clone_codes_box>.contact>h3>b {
             font-size: 27px;
             font-weight: 500;
         }
-        .main_content_wrap>.clone_codes_box>.contact > ul > li {
+
+        .main_content_wrap>.clone_codes_box>.contact>ul>li {
             font-size: 20px;
             color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 300;
         }
-        .main_content_wrap>.clone_codes_box>.contact >.open_kakao >img {
+
+        .main_content_wrap>.clone_codes_box>.contact>.open_kakao>img {
             width: 200px;
             height: 200px;
         }
 
+        .main_content_wrap>.clone_codes_box>.contact::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
 
+        footer {
+            height: 100px;
+            background: #191970;
+        }
     </style>
 </head>
 
@@ -553,10 +573,10 @@
                                 <li>HTML/CSS/Javascript</li>
                                 <li>제작기간: 2020.05 - 2020.07</li>
                             </ul>
-                            <a href="portfolio/naver/index.html"target="_blank">
+                            <a href="portfolio/naver/index.html" target="_blank">
                                 <span class="btn_left">SITE</span>
                             </a>
-                            <a href="portfolio/naver/projectflower.html"target="_blank">
+                            <a href="portfolio/naver/projectflower.html" target="_blank">
                                 <span class="btn_right">SUBPAGE</span>
                             </a>
                         </div>
@@ -633,8 +653,38 @@
             <!--main_content_wrap-->
         </div>
         <!--container-->
+        <footer></footer>
     </div>
     <!--wrap-->
+    <script>
+        //  <div class="header_wrap">
+        //         <nav>
+        //             <ul class="main_menu">
+        //                 <li><a href="">HOME</a></li>
+        //                 <li><a href="">ABOUT</a></li>
+        //                 <li><a href="">WORK</a></li>
+        //                 <li><a href="">CONTACT</a></li>
+        //             </ul>
+        //         </nav>
+        //     </div>
+        const $html = document.querySelector('html');
+        const $nav =document.querySelector('.header_wrap > nav');
+        const $ul = $nav.querySelector('.main_menu');
+        const $li = $ul.querySelectorAll('li');
+        console.log($li);
+        for (let i=0; i < $li.length; i++){
+            $li[i].addEventListener('click', clickWork);
+        }
+
+        function clickWork(ev){
+            ev.preventDefault();
+            if(ev.target.tagName !=='A')return;
+            if(ev.target.parentNode.innerText === 'HOME'){
+                console.log('correct')
+
+            }
+        }
+    </script>
 </body>
 
 </html>
