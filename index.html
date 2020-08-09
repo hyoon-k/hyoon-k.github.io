@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김혜윤 포트폴리오</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lobster&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
     <style>
-        *{box-sizing: border-box;}
+        /* reset css */
+        * {
+            box-sizing: border-box;
+        }
+
         ul,
         ol,
         li {
@@ -23,12 +25,210 @@
             text-decoration: none;
         }
 
-        .header_wrap {border: 1px solid red; position: fixed;top: 0; right: 0; left: 0; height: 60px;z-index: 4;}
-        .header_wrap > nav {border: 1px solid lime;overflow: hidden; width: 100%; height: 60px;}
-        .header_wrap > nav > ul {float: right; width: 50%;}
-        .header_wrap > nav > ul > li{float: left;border: 1px solid green; width: 25%;}
-        .header_wrap > nav > ul > li > a {font-size: 22px; font-family: 'Rubik', sans-serif;}
-        
+        /* header */
+        .header_wrap {
+            border: 1px solid red;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 60px;
+            z-index: 4;
+            background: transparent;
+        }
+
+        .header_wrap>nav {
+            border: 1px solid lime;
+            overflow: hidden;
+            width: 100%;
+            height: 60px;
+        }
+
+        .header_wrap>nav>ul {
+            float: right;
+            width: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .header_wrap>nav>ul>li {
+            float: left;
+            border: 1px solid green;
+            width: 25%;
+        }
+
+        .header_wrap>nav>ul>li>a {
+            font-size: 22px;
+            font-family: 'Rubik', sans-serif;
+            color: #191970
+        }
+
+        /* container 시작  */
+        .container>.main_page {
+            width: 100%;
+            height: 100%;
+            border: 1px solid purple;
+            top: 0;
+        }
+
+        .container>.main_page>h2 {
+            font-size: 30px;
+            color: #191970;
+            font-family: 'Rubik', sans-serif;
+            font-weight: normal;
+            border: 1px solid red;
+            position: relative;
+            width: 800px;
+            height: 30px;
+            transform: rotate(-90deg);
+            left: 61%;
+            top: 150px;
+        }
+
+        .container>.main_page>h2::before {
+            content: '';
+            display: block;
+            width: 30%;
+            height: 2px;
+            background-color: #191970;
+            position: absolute;
+            bottom: 0;
+            right: 42%;
+        }
+
+        .container>.main_page>.main_page_picture {
+            background: url(img/main_page.jpg)no-repeat center 0;
+            border: 1px solid tomato;
+            width: 1000px;
+            height: 600px;
+            background-size: cover;
+            position: relative;
+            bottom: 12px;
+            left: 30px;
+        }
+
+        .container>.main_page::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* 메인 콘텐츠 부분 */
+        .container>.main_content_wrap {
+            padding: 40px;
+            border: 1px solid blue;
+            background-color: #f5f5f5;
+        }
+        .main_content_wrap>.about_me>h2 {
+            font-size: 33px;
+            color: #4682B4;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            margin-top: 0;
+        }
+
+        .main_content_wrap>.about_me>h2>b {
+            font-size: 27px;
+            font-weight: 500;
+        }
+
+        .main_content_wrap>.about_me>.profile {
+            background: #fff;
+            border-radius: 5px;
+            float: left;
+            position: relative;
+            text-align: center;
+            margin-right: 30px;
+        }
+
+        .main_content_wrap>.about_me>.profile>img {
+            width: 250px;
+            height: 350px;
+            border-radius: 5px;
+        }
+
+        .main_content_wrap>.about_me>.profile>h3 {
+            font-size: 20px;
+            color: #191970;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+        }
+
+        .main_content_wrap>.about_me>.profile>.location {
+            font-size: 15px;
+            color: #191970;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+        }
+
+        .main_content_wrap>.about_me>.profile>.date {
+            font-size: 15px;
+            color: #191970;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+        }
+
+        .main_content_wrap>.about_me>.education {
+            background: #fff;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 10px;
+
+        }
+
+        .main_content_wrap>.about_me>.education>h3 {
+            font-size: 27px;
+            color: #666666;
+            font-family: 'Rubik', sans-serif;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .main_content_wrap>.about_me>.education>h4 {
+            font-size: 18px;
+            color: #222;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .main_content_wrap>.about_me>.education>h4>span {
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        .main_content_wrap>.about_me>.skills {
+            background: #fff;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 42px;
+            width: 57%;
+        }
+
+        .main_content_wrap>.about_me>.skills>h3 {
+            font-size: 27px;
+            color: #666666;
+            font-family: 'Rubik', sans-serif;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .main_content_wrap>.about_me>.skills > ul {
+            overflow: hidden;
+        }
+
+        .main_content_wrap>.about_me>.skills > ul > li {
+            float: left;
+            width: 32%;
+        }
+
+        .main_content_wrap > .about_me::after {
+            content:'';
+            display: block;
+            clear: both;
+        }
+
     </style>
 </head>
 
@@ -49,99 +249,130 @@
         <div class="container">
             <div class="main_page">
                 <h2>HYEYOON KIM</h2>
-                <img src="" alt="">
+                <div class="main_page_picture"></div>
             </div>
-            <div class="about_me">
-            </div>
-            <div class="pf_naver">
-                <div class="pf_title">
-                    <h2>WORK
-                        <b>#01</b>
+            <div class="main_content_wrap">
+                <div class="about_me">
+                    <h2>ABOUT
+                        <b>#ME</b>
                     </h2>
+                    <div class="profile">
+                        <img src="img/profile.jpg" alt="">
+                        <h3>김혜윤</h3>
+                        <p class="location">경기도 용인시 동천동</p>
+                        <p class="date">1996.12.12</p>
+                    </div>
+                    <div class="education">
+                        <h3>EDUCATION</h3>
+                        <h4>경기도 일자리재단
+                            <span>UX/UI 웹퍼블리셔 440H 수료</span>
+                        </h4>
+                        <h4>FASHION INSTITUTE OF TECHNOLOGY
+                            <span>순수미술학과 졸업</span>
+                        </h4>
+
+                    </div>
+                    <div class="skills">
+                        <h3>SKILLS</h3>
+                        <ul>
+                            <li><img src="img/html5.png" alt=""></li>
+                            <li><img src="img/css3.png" alt=""></li>
+                            <li><img src="img/javascript.png" alt=""></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="web_img">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
+                <div class="pf_naver">
+                    <div class="pf_title">
+                        <h2>WORK
+                            <b>#01</b>
+                        </h2>
+                    </div>
+                    <div class="web_img">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                    <div class="web_detail">
+                        <h3>NAVER Corp.</h3>
+                        <ul>
+                            <li>네이버 사이트 클론코딩</li>
+                            <li>HTML/CSS/Javascript</li>
+                            <li>제작기간: 2020.05 - 2020.07</li>
+                        </ul>
+                        <a href="">
+                            <div class="btn_left">SITE</div>
+                        </a>
+                        <a href="">
+                            <div class="btn_right">SUBPAGE</div>
+                        </a>
+                    </div>
                 </div>
-                <div class="web_detail">
-                    <h3>NAVER Corp.</h3>
+                <div class="pf_primera">
+                    <div class="pf_title">
+                        <h2>WORK
+                            <b>#02</b>
+                        </h2>
+                    </div>
+                    <div class="web_img">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                    <div class="web_detail">
+                        <h3>Primera Beauty</h3>
+                        <ul>
+                            <li>프리메라 사이트 클론코딩</li>
+                            <li>PC/MOBILE 반응형</li>
+                            <li>HTML/CSS/Javascript/JQuery</li>
+                            <li>제작기간: 2020.07</li>
+                        </ul>
+                        <a href="">
+                            <div class="btn_left">SITE</div>
+                        </a>
+                        <a href="">
+                            <div class="btn_right">CODE</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="pf_airbnb">
+                    <div class="pf_title">
+                        <h2>WORK
+                            <b>#03</b>
+                        </h2>
+                    </div>
+                    <div class="web_img">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                    <div class="web_detail">
+                        <h3>AIRBNB</h3>
+                        <ul>
+                            <li>에어비엔비 사이트 클론코딩</li>
+                            <li>HTML/CSS/Javascript</li>
+                            <li>PC/MOBILE 반응형</li>
+                            <li>제작기간: 2020.08</li>
+                        </ul>
+                        <a href="">
+                            <div class="btn_left">SITE</div>
+                        </a>
+                        <a href="">
+                            <div class="btn_right">CODE</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h3>CONTACT</h3>
                     <ul>
-                        <li>네이버 사이트 클론코딩</li>
-                        <li>HTML/CSS/Javascript</li>
-                        <li>제작기간: 2020.05 - 2020.07</li>
+                        <li>김혜윤</li>
+                        <li>jme_kim12@naver.com</li>
+                        <li>hyoon-k.github.io</li>
+                        <li><img src="" alt=""></li>
                     </ul>
-                    <a href="">
-                        <div class="btn_left">SITE</div>
-                    </a>
-                    <a href="">
-                        <div class="btn_right">SUBPAGE</div>
-                    </a>
                 </div>
             </div>
-            <div class="pf_primera">
-                <div class="pf_title">
-                    <h2>WORK
-                        <b>#02</b>
-                    </h2>
-                </div>
-                <div class="web_img">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <div class="web_detail">
-                    <h3>Primera Beauty</h3>
-                    <ul>
-                        <li>프리메라 사이트 클론코딩</li>
-                        <li>PC/MOBILE 반응형</li>
-                        <li>HTML/CSS/Javascript/JQuery</li>
-                        <li>제작기간: 2020.07</li>
-                    </ul>
-                    <a href="">
-                        <div class="btn_left">SITE</div>
-                    </a>
-                    <a href="">
-                        <div class="btn_right">CODE</div>
-                    </a>
-                </div>
-            </div>
-            <div class="pf_airbnb">
-                <div class="pf_title">
-                    <h2>WORK
-                        <b>#03</b>
-                    </h2>
-                </div>
-                <div class="web_img">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <div class="web_detail">
-                    <h3>AIRBNB</h3>
-                    <ul>
-                        <li>에어비엔비 사이트 클론코딩</li>
-                        <li>HTML/CSS/Javascript</li>
-                        <li>PC/MOBILE 반응형</li>
-                        <li>제작기간: 2020.08</li>
-                    </ul>
-                    <a href="">
-                        <div class="btn_left">SITE</div>
-                    </a>
-                    <a href="">
-                        <div class="btn_right">CODE</div>
-                    </a>
-                </div>
-            </div>
-            <div class="contact">
-                <h3>CONTACT</h3>
-                <ul>
-                    <li>김혜윤</li>
-                    <li>jme_kim12@naver.com</li>
-                    <li>hyoon-k.github.io</li>
-                    <li><img src="" alt=""></li>
-                </ul>
-            </div>
+            <!--main_content_wrap-->
+
         </div>
         <!--container-->
     </div>
