@@ -27,7 +27,6 @@
 
         /* header */
         .header_wrap {
-            border: 1px solid red;
             position: fixed;
             top: 0;
             right: 0;
@@ -38,7 +37,6 @@
         }
 
         .header_wrap>nav {
-            border: 1px solid lime;
             overflow: hidden;
             width: 100%;
             height: 60px;
@@ -53,7 +51,6 @@
 
         .header_wrap>nav>ul>li {
             float: left;
-            border: 1px solid green;
             width: 25%;
         }
 
@@ -67,7 +64,6 @@
         .container>.main_page {
             width: 100%;
             height: 100%;
-            border: 1px solid purple;
             top: 0;
         }
 
@@ -76,7 +72,6 @@
             color: #191970;
             font-family: 'Rubik', sans-serif;
             font-weight: normal;
-            border: 1px solid red;
             position: relative;
             width: 800px;
             height: 30px;
@@ -88,9 +83,9 @@
         .container>.main_page>h2::before {
             content: '';
             display: block;
+            background: #191970;
             width: 30%;
             height: 2px;
-            background-color: #191970;
             position: absolute;
             bottom: 0;
             right: 42%;
@@ -98,7 +93,6 @@
 
         .container>.main_page>.main_page_picture {
             background: url(img/main_page.jpg)no-repeat center 0;
-            border: 1px solid tomato;
             width: 1000px;
             height: 600px;
             background-size: cover;
@@ -114,18 +108,30 @@
         }
 
         /* 메인 콘텐츠 부분 */
-        .container>.main_content_wrap {
-            border: 1px solid blue;
-        }
         .main_content_wrap>.about_me {
             padding: 40px;
+            margin-bottom: 55px;
         }
+
         .main_content_wrap>.about_me>h2 {
             font-size: 33px;
             color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 300;
             margin-top: 0;
+            position: relative;
+        }
+
+        .main_content_wrap>.about_me>h2::after {
+            content: '';
+            position: absolute;
+            height: 16px;
+            background-color: powderblue;
+            bottom: 0;
+            left: 3%;
+            width: 30%;
+            transform: skewX(-30deg);
+            z-index: -1;
         }
 
         .main_content_wrap>.about_me>h2>b {
@@ -134,7 +140,7 @@
         }
 
         .main_content_wrap>.about_me>.profile {
-            background: #F8F8FF;
+            background: #f5f5f5;
             border-radius: 5px;
             float: left;
             position: relative;
@@ -170,9 +176,9 @@
         }
 
         .main_content_wrap>.about_me>.education {
-            background: #F8F8FF;
+            background: #f5f5f5;
             display: inline-block;
-            border-radius: 5px;
+            border-radius: 6px;
             padding: 10px;
 
         }
@@ -200,9 +206,9 @@
         }
 
         .main_content_wrap>.about_me>.skills {
-            background: #F8F8FF;
+            background: #f5f5f5;
             display: inline-block;
-            border-radius: 5px;
+            border-radius: 6px;
             padding: 10px;
             margin-top: 42px;
             width: 57%;
@@ -218,11 +224,17 @@
 
         .main_content_wrap>.about_me>.skills>ul {
             overflow: hidden;
+            width: 100%;
         }
 
         .main_content_wrap>.about_me>.skills>ul>li {
             float: left;
-            width: 32%;
+            width: 25%;
+        }
+
+        .main_content_wrap>.about_me>.skills>ul>li:last-child>img {
+            width: 150px;
+            height: 150px;
         }
 
         .main_content_wrap>.about_me::after {
@@ -231,83 +243,181 @@
             clear: both;
         }
 
-        .main_content_wrap >.clone_codes_box {
+        .main_content_wrap>.clone_codes_box {
             padding: 20px 40px;
             background: #f5f5f5;
         }
+
         /* naver  */
-        .main_content_wrap >.clone_codes_box >.pf_naver >.pf_title >h2{
-            font-size: 36px;
+        .main_content_wrap>.clone_codes_box>.pf_naver>.pf_title>h2 {
+            font-size: 40px;
             color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 300;
         }
 
-        .main_content_wrap >.clone_codes_box >.pf_naver > .web_img {float: left; display: inline-block; margin-right: 30px;}
-        .main_content_wrap >.clone_codes_box >.pf_naver > .web_img > a > img {
+        .main_content_wrap>.clone_codes_box>.pf_naver>.pf_title>h2>b {
+            font-size: 35px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_img {
+            float: left;
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_img>a>img {
             width: 571px;
             height: auto;
         }
-        .main_content_wrap >.clone_codes_box >.pf_naver >.web_detail {
-            border: 1px solid red;
+
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail {
             display: inline-block;
             padding: 30px;
         }
-        .main_content_wrap >.clone_codes_box >.pf_naver >.web_detail >h3 {
+
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail>h3 {
             font-size: 24px;
             color: #666666;
             font-family: 'Rubik', sans-serif;
         }
-        .main_content_wrap >.clone_codes_box >.pf_naver >.web_detail >ul {
+
+        .main_content_wrap>.clone_codes_box>.pf_naver>.web_detail>ul {
             padding: 0;
             font-size: 16px;
             color: #222;
             font-family: 'Rubik', sans-serif;
         }
 
-        .main_content_wrap >.clone_codes_box >.pf_naver::after{
-            content:'';
+        .main_content_wrap>.clone_codes_box>.pf_naver::after {
+            content: '';
             display: block;
             clear: both;
         }
+
         /* primera */
-        .main_content_wrap >.clone_codes_box >.pf_primera {margin-top: 100px;}
-        .main_content_wrap >.clone_codes_box >.pf_primera >.pf_title >h2{
+        .main_content_wrap>.clone_codes_box>.pf_primera {
+            margin-top: 130px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.pf_title>h2 {
             text-align: right;
-            font-size: 36px;
+            font-size: 40px;
             color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 300;
         }
 
-        .main_content_wrap >.clone_codes_box >.pf_primera > .web_img {float: right; display: inline-block; text-align: right;}
-        .main_content_wrap >.clone_codes_box >.pf_primera > .web_img > a > img {
+        .main_content_wrap>.clone_codes_box>.pf_primera>.pf_title>h2>b {
+            font-size: 35px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_img {
+            float: right;
+            display: inline-block;
+            text-align: right;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_img>a>img {
             width: 591px;
             height: auto;
         }
-        .main_content_wrap >.clone_codes_box >.pf_primera >.web_detail {
-            border: 1px solid red;
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_detail {
+            position: relative;
+            left: 30%;
             display: inline-block;
             padding: 30px;
         }
-        .main_content_wrap >.clone_codes_box >.pf_primera >.web_detail >h3 {
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_detail>h3 {
             font-size: 24px;
             color: #666666;
             font-family: 'Rubik', sans-serif;
         }
-        .main_content_wrap >.clone_codes_box >.pf_primera >.web_detail >ul {
+
+        .main_content_wrap>.clone_codes_box>.pf_primera>.web_detail>ul {
             padding: 0;
             font-size: 16px;
             color: #222;
             font-family: 'Rubik', sans-serif;
         }
 
-        .main_content_wrap >.clone_codes_box >.pf_primera::after{
-            content:'';
+        .main_content_wrap>.clone_codes_box>.pf_primera::after {
+            content: '';
             display: block;
             clear: both;
         }
+
         /* airbnb */
+        .main_content_wrap>.clone_codes_box>.pf_airbnb {
+            margin-top: 130px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.pf_title>h2 {
+            font-size: 40px;
+            color: #4682B4;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.pf_title>h2>b {
+            font-size: 35px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_img {
+            float: left;
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_img>a>img {
+            width: 591px;
+            height: auto;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_detail {
+            display: inline-block;
+            padding: 30px;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_detail>h3 {
+            font-size: 24px;
+            color: #666666;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb>.web_detail>ul {
+            padding: 0;
+            font-size: 16px;
+            color: #222;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .main_content_wrap>.clone_codes_box>.pf_airbnb::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* contact */
+        .main_content_wrap>.clone_codes_box>.contact {
+            margin-top: 135px;
+            text-align: center;
+        }
+
+        .main_content_wrap>.clone_codes_box>.contact>h3 {
+            font-size: 33px;
+            color: #4682B4;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
+            margin-top: 0;
+        }
+
+        .main_content_wrap>.clone_codes_box>.contact>h3>b {
+            font-size: 27px;
+            font-weight: 500;
+        }
     </style>
 </head>
 
@@ -357,6 +467,7 @@
                             <li><img src="img/html5.png" alt="html5"></li>
                             <li><img src="img/css3.png" alt="css3"></li>
                             <li><img src="img/javascript.png" alt="javascript"></li>
+                            <li><img src="img/jquery.png" alt=""></li>
                         </ul>
                     </div>
                 </div>
@@ -442,15 +553,20 @@
                         </div>
                     </div>
                     <div class="contact">
-                        <h3>CONTACT</h3>
+                        <h3>CONTACT
+                            <b>#HERE</b>
+                        </h3>
                         <ul>
                             <li>김혜윤</li>
                             <li>jme_kim12@naver.com</li>
                             <li>hyoon-k.github.io</li>
-                            <li><img src="" alt=""></li>
                         </ul>
+                        <div class="open_kakao">
+                            <img src="img/open_ktalk.jpg" alt="">
+                        </div>
                     </div>
-                </div><!--clone_codes_box-->
+                </div>
+                <!--clone_codes_box-->
             </div>
             <!--main_content_wrap-->
         </div>
