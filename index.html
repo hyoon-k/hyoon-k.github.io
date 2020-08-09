@@ -112,11 +112,13 @@
             display: block;
             clear: both;
         }
+
         /* 메인 콘텐츠 부분 */
         .container>.main_content_wrap {
-            padding: 40px;
             border: 1px solid blue;
-            background-color: #f5f5f5;
+        }
+        .main_content_wrap>.about_me {
+            padding: 40px;
         }
         .main_content_wrap>.about_me>h2 {
             font-size: 33px;
@@ -132,7 +134,7 @@
         }
 
         .main_content_wrap>.about_me>.profile {
-            background: #fff;
+            background: #F8F8FF;
             border-radius: 5px;
             float: left;
             position: relative;
@@ -148,27 +150,27 @@
 
         .main_content_wrap>.about_me>.profile>h3 {
             font-size: 20px;
-            color: #191970;
+            color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 500;
         }
 
         .main_content_wrap>.about_me>.profile>.location {
             font-size: 15px;
-            color: #191970;
+            color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 400;
         }
 
         .main_content_wrap>.about_me>.profile>.date {
             font-size: 15px;
-            color: #191970;
+            color: #4682B4;
             font-family: 'Rubik', sans-serif;
             font-weight: 400;
         }
 
         .main_content_wrap>.about_me>.education {
-            background: #fff;
+            background: #F8F8FF;
             display: inline-block;
             border-radius: 5px;
             padding: 10px;
@@ -198,7 +200,7 @@
         }
 
         .main_content_wrap>.about_me>.skills {
-            background: #fff;
+            background: #F8F8FF;
             display: inline-block;
             border-radius: 5px;
             padding: 10px;
@@ -214,19 +216,31 @@
             font-weight: normal;
         }
 
-        .main_content_wrap>.about_me>.skills > ul {
+        .main_content_wrap>.about_me>.skills>ul {
             overflow: hidden;
         }
 
-        .main_content_wrap>.about_me>.skills > ul > li {
+        .main_content_wrap>.about_me>.skills>ul>li {
             float: left;
             width: 32%;
         }
 
-        .main_content_wrap > .about_me::after {
-            content:'';
+        .main_content_wrap>.about_me::after {
+            content: '';
             display: block;
             clear: both;
+        }
+
+        .main_content_wrap >.clone_codes_box {
+            padding: 20px 40px;
+            background: #f5f5f5;
+        }
+        
+        .main_content_wrap >.clone_codes_box >.pf_naver >.pf_title >h2{
+            font-size: 36px;
+            color: #4682B4;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 300;
         }
 
     </style>
@@ -275,104 +289,105 @@
                     <div class="skills">
                         <h3>SKILLS</h3>
                         <ul>
-                            <li><img src="img/html5.png" alt=""></li>
-                            <li><img src="img/css3.png" alt=""></li>
-                            <li><img src="img/javascript.png" alt=""></li>
+                            <li><img src="img/html5.png" alt="html5"></li>
+                            <li><img src="img/css3.png" alt="css3"></li>
+                            <li><img src="img/javascript.png" alt="javascript"></li>
                         </ul>
                     </div>
                 </div>
-                <div class="pf_naver">
-                    <div class="pf_title">
-                        <h2>WORK
-                            <b>#01</b>
-                        </h2>
+                <div class="clone_codes_box">
+                    <div class="pf_naver">
+                        <div class="pf_title">
+                            <h2>WORK
+                                <b>#01</b>
+                            </h2>
+                        </div>
+                        <div class="web_img">
+                            <a href="">
+                                <img src="" alt="">
+                            </a>
+                        </div>
+                        <div class="web_detail">
+                            <h3>NAVER Corp.</h3>
+                            <ul>
+                                <li>네이버 사이트 클론코딩</li>
+                                <li>HTML/CSS/Javascript</li>
+                                <li>제작기간: 2020.05 - 2020.07</li>
+                            </ul>
+                            <a href="">
+                                <div class="btn_left">SITE</div>
+                            </a>
+                            <a href="">
+                                <div class="btn_right">SUBPAGE</div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="web_img">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
+                    <div class="pf_primera">
+                        <div class="pf_title">
+                            <h2>WORK
+                                <b>#02</b>
+                            </h2>
+                        </div>
+                        <div class="web_img">
+                            <a href="">
+                                <img src="" alt="">
+                            </a>
+                        </div>
+                        <div class="web_detail">
+                            <h3>Primera Beauty</h3>
+                            <ul>
+                                <li>프리메라 사이트 클론코딩</li>
+                                <li>PC/MOBILE 반응형</li>
+                                <li>HTML/CSS/Javascript/JQuery</li>
+                                <li>제작기간: 2020.07</li>
+                            </ul>
+                            <a href="">
+                                <div class="btn_left">SITE</div>
+                            </a>
+                            <a href="">
+                                <div class="btn_right">CODE</div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="web_detail">
-                        <h3>NAVER Corp.</h3>
+                    <div class="pf_airbnb">
+                        <div class="pf_title">
+                            <h2>WORK
+                                <b>#03</b>
+                            </h2>
+                        </div>
+                        <div class="web_img">
+                            <a href="">
+                                <img src="" alt="">
+                            </a>
+                        </div>
+                        <div class="web_detail">
+                            <h3>AIRBNB</h3>
+                            <ul>
+                                <li>에어비엔비 사이트 클론코딩</li>
+                                <li>HTML/CSS/Javascript</li>
+                                <li>PC/MOBILE 반응형</li>
+                                <li>제작기간: 2020.08</li>
+                            </ul>
+                            <a href="">
+                                <div class="btn_left">SITE</div>
+                            </a>
+                            <a href="">
+                                <div class="btn_right">CODE</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <h3>CONTACT</h3>
                         <ul>
-                            <li>네이버 사이트 클론코딩</li>
-                            <li>HTML/CSS/Javascript</li>
-                            <li>제작기간: 2020.05 - 2020.07</li>
+                            <li>김혜윤</li>
+                            <li>jme_kim12@naver.com</li>
+                            <li>hyoon-k.github.io</li>
+                            <li><img src="" alt=""></li>
                         </ul>
-                        <a href="">
-                            <div class="btn_left">SITE</div>
-                        </a>
-                        <a href="">
-                            <div class="btn_right">SUBPAGE</div>
-                        </a>
                     </div>
-                </div>
-                <div class="pf_primera">
-                    <div class="pf_title">
-                        <h2>WORK
-                            <b>#02</b>
-                        </h2>
-                    </div>
-                    <div class="web_img">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                    </div>
-                    <div class="web_detail">
-                        <h3>Primera Beauty</h3>
-                        <ul>
-                            <li>프리메라 사이트 클론코딩</li>
-                            <li>PC/MOBILE 반응형</li>
-                            <li>HTML/CSS/Javascript/JQuery</li>
-                            <li>제작기간: 2020.07</li>
-                        </ul>
-                        <a href="">
-                            <div class="btn_left">SITE</div>
-                        </a>
-                        <a href="">
-                            <div class="btn_right">CODE</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="pf_airbnb">
-                    <div class="pf_title">
-                        <h2>WORK
-                            <b>#03</b>
-                        </h2>
-                    </div>
-                    <div class="web_img">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                    </div>
-                    <div class="web_detail">
-                        <h3>AIRBNB</h3>
-                        <ul>
-                            <li>에어비엔비 사이트 클론코딩</li>
-                            <li>HTML/CSS/Javascript</li>
-                            <li>PC/MOBILE 반응형</li>
-                            <li>제작기간: 2020.08</li>
-                        </ul>
-                        <a href="">
-                            <div class="btn_left">SITE</div>
-                        </a>
-                        <a href="">
-                            <div class="btn_right">CODE</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact">
-                    <h3>CONTACT</h3>
-                    <ul>
-                        <li>김혜윤</li>
-                        <li>jme_kim12@naver.com</li>
-                        <li>hyoon-k.github.io</li>
-                        <li><img src="" alt=""></li>
-                    </ul>
-                </div>
+                </div><!--clone_codes_box-->
             </div>
             <!--main_content_wrap-->
-
         </div>
         <!--container-->
     </div>
