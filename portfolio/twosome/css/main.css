@@ -335,3 +335,32 @@ header .header_wrap>a.home:hover::after {
     margin: 0;
     padding: 69px 0 64px;
 }
+
+/* footer */
+footer {
+    position: relative;
+    z-index: 5;
+    height: 140px;
+    background: #363c43;
+}
+footer >.footer_wrap {
+    position: relative;
+    width: 1070px;
+    margin: 0 auto;
+}
+
+footer >.footer_wrap > .footer_menu > ul {
+    text-align: center;
+    padding-top: 25px;
+}
+
+footer >.footer_wrap > .footer_menu > ul > li {
+    display: inline;
+    padding: 0 13px 0 19px;
+}
+
+footer >.footer_wrap > .footer_menu > ul > li+li {
+    background:url(../img/bg_footer_line.png)no-repeat 0 5px;
+}
+
+footer >.footer_wrap > .footer_address{text-align: center;}
