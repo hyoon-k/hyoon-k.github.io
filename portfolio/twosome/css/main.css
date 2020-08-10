@@ -2,6 +2,7 @@
 /* reset */
 ul,li,ol{list-style:none;}
 a {text-decoration: none;}
+.blind{display:none;}
 *{box-sizing:border-box;}
 body {margin: 0;}
 /* header */
@@ -12,7 +13,44 @@ header .header_wrap > .gnb {border: 1px solid lime; position: absolute; top: 1px
 header .header_wrap > .gnb > li { float: left; position: relative;}
 header .header_wrap > .gnb > li+li::after{content:''; display: block; position: absolute; top: 10px; left: 0; width: 1px; height: 26px; background-color: #16859d; opacity: .6;}
 header .header_wrap > .gnb > li > a {display: block; position: relative; width: 210px; height: 39px; text-align: center;}
+header .header_wrap > .gnb > li.youtube > a::after {left: 30px; width: 150px; background:url(../img/gnb01_on.png);}
+header .header_wrap > .gnb > li.instagram > a::after{left: 23px; width: 163px; background:url(../img/gnb02_on.png);}
+header .header_wrap > .gnb > li.summer > a::after{left: 17px; width: 176px; background:url(../img/gnb03_on.png);}
+header .header_wrap > .gnb > li > a:hover::after {opacity: 1;}
+header .header_wrap > .gnb > li > a::after {    
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    height: 39px;
+    background: no-repeat 0 0;
+    opacity: 0;
+    transition: opacity .4s linear;}
 header .header_wrap > a.home {position: absolute; top: 0; right: 0; width: 100px; height: 90px; text-align: center;}
+header .header_wrap > a.home::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100px;
+    height: 90px;
+    background: url(../img/btn_home_on.png) no-repeat 0 0;
+    opacity: 0;
+}
+header .header_wrap > a.home:hover::after{opacity: 1;}
 /* container */
 /* section 메인부분 */
-.container {position: relative; background:url(../img/bg_summer_pat02.jpg)center 0 repeat-x;}
+.container {position: relative; background:url(../img/bg_summer_pat02.jpg) center 0 repeat-x;}
+.container > .section_main {position: relative; padding: 0; margin: 0; height: 861px;}
+.container > .section_main >.section_inner >a {border: 1px solid blue; position: absolute; display: block; top: 154px;left: 50%;margin-left: -251px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span {display: inline-block;vertical-align:top;}
+.container > .section_main >.section_inner > a > .twosome_text_top {position: absolute;top: 57px; left: 0; width: 100%; text-align: center;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(1){margin-top: 8px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(2){margin-top: 12px; margin-left: -6px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(3){margin-top: 4px; margin-left: -6px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(4){margin-top: 0px; margin-left: 1px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(5){margin-top: 11px; margin-left: -7px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(6){margin-top: 4px; margin-left: -7px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(7){margin-top: 11px; margin-left: -7px;}
+.container > .section_main >.section_inner > a > .twosome_text_top > span:nth-child(8){margin-top: 7px; margin-left: -4px;}
