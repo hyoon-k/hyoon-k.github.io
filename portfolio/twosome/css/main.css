@@ -1,0 +1,18 @@
+
+/* reset */
+ul,li,ol{list-style:none;}
+a {text-decoration: none;}
+*{box-sizing:border-box;}
+body {margin: 0;}
+/* header */
+header{height: 90px; background-color: #09b3d3;}
+header .header_wrap {position: relative; width: 1070px; margin: 0 auto; border: 1px solid purple;}
+header .header_wrap > h1.header_logo {border: 1px solid red;}
+header .header_wrap > .gnb {border: 1px solid lime; position: absolute; top: 1px; right: 118px;}
+header .header_wrap > .gnb > li { float: left; position: relative;}
+header .header_wrap > .gnb > li+li::after{content:''; display: block; position: absolute; top: 10px; left: 0; width: 1px; height: 26px; background-color: #16859d; opacity: .6;}
+header .header_wrap > .gnb > li > a {display: block; position: relative; width: 210px; height: 39px; text-align: center;}
+header .header_wrap > a.home {position: absolute; top: 0; right: 0; width: 100px; height: 90px; text-align: center;}
+/* container */
+/* section 메인부분 */
+.container {position: relative; background:url(../img/bg_summer_pat02.jpg)center 0 repeat-x;}
