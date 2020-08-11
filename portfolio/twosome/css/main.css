@@ -31,15 +31,17 @@ header .header_wrap {
     position: relative;
     width: 1070px;
     margin: 0 auto;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
 header .header_wrap>h1.header_logo {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    position: absolute;
+    
 }
 
 header .header_wrap>.gnb {
-    border: 1px solid lime;
+    /* border: 1px solid lime; */
     position: absolute;
     top: 1px;
     right: 118px;
@@ -133,6 +135,7 @@ header .header_wrap>a.home:hover::after {
 .container {
     position: relative;
     background: url(../img/bg_summer_pat02.jpg) center 0 repeat-x;
+    overflow: hidden;
 }
 
 .container>.section_main {
@@ -143,7 +146,7 @@ header .header_wrap>a.home:hover::after {
 }
 
 .container>.section_main>.section_inner>a {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     position: absolute;
     display: block;
     top: 154px;
@@ -331,10 +334,47 @@ header .header_wrap>a.home:hover::after {
 }
 
 .container>.section_product>.product_slide>h2 {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 0;
     padding: 69px 0 64px;
 }
+/* slide 부분 */
+.container > .section_product >.product_slide > .product_item >.product {
+    width: 600px;
+    height: 675px;
+    margin: 0 auto;
+}
+.container > .section_product >.product_slide > .product_item >.product >.bx-wrapper {
+    border: 0;
+    background: #fdfbe1;
+    box-shadow: none;
+}
+.container > .section_product >.product_slide > .product_item >.product >.bx-wrapper >.bx-viewport {
+    height: 643px !important;
+}
+
+.container > .section_product >.product_slide > .product_item >.product >.bx-wrapper >.bx-viewport > ul {
+    padding: 0;
+}
+.container > .section_product >.product_slide > .product_item >.product >.bx-wrapper >.bx-controls.bx-has-pager {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: 313px;
+}
+
+.container > .section_product >.product_slide > .product_item >.product >.bx-wrapper >.bx-controls .bx-pager {
+    width: 56px;
+    border: 1px solid #d4d1be;
+    border-top: 0 none;
+}
+
+.container > .section_product >.product_slide > .product_item >.product >.bx-wrapper >.bx-controls .bx-pager >.bx-pager-item {
+    border: 1px solid #d4d1be;
+    height: 56px;
+}
+
+
 
 /* footer */
 footer {
