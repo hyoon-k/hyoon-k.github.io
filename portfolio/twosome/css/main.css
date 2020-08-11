@@ -260,34 +260,29 @@ header .header_wrap>a.home:hover::after {
 }
 
 .container>.section_main>.fire_wk.img01 {
-    border: 1px solid lime;
     top: 130px;
     margin-left: -257px;
 }
 
 .container>.section_main>.fire_wk.img02 {
-    border: 1px solid lime;
     top: 305px;
     margin-left: 258px;
     animation-delay: 0.5s;
 }
 
 .container>.section_main>.fire_wk.img03 {
-    border: 1px solid lime;
     top: 285px;
     margin-left: 597px;
     animation-delay: 1s;
 }
 
 .container>.section_main>.fire_wk.img04 {
-    border: 1px solid lime;
     top: 600px;
     margin-left: -533px;
     animation-delay: 0.8s;
 }
 
 .container>.section_main>.fire_wk.img05 {
-    border: 1px solid lime;
     top: 542px;
     margin-left: 325px;
     animation-delay: 1.2s;
@@ -338,14 +333,46 @@ header .header_wrap>a.home:hover::after {
     margin: 0;
     padding: 69px 0 64px;
 }
+.container>.section_product>span.bg_img_01 {
+    position: absolute;
+    top: 272px;
+    left: 50%;
+    margin-left: -1066px;
+    width: 306px;
+    height: 284px;
+    background:url(../img/product_bg_01.png)no-repeat 0 0;
+}
+
+.container>.section_product>span.bg_img_02{
+    position: absolute;
+    top: 1240px;
+    left: 50%;
+    margin-left: 776px;
+    width: 296px;
+    height: 261px;
+    background:url(../img/product_bg_02.png)no-repeat 0 0;
+} 
+
+.container>.section_product>span.bg_img_03{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1678px;
+    width: 1383px;
+    height: 459px;
+    background:url(../img/product_bg_03.png)no-repeat 0 0;
+} 
+
 /* slide 부분 */
 .container > .section_product >.product_slide > .product_item >.product {
+    
     width: 600px;
     height: 675px;
     margin: 0 auto;
 }
 .container > .section_product >.product_slide > .product_item  >.btn_product {
     padding-bottom: 65px;
+    padding-top: 10px;
 }
 .product >.bx-wrapper {
     border: 0;
@@ -587,6 +614,7 @@ header .header_wrap>a.home:hover::after {
 
 /* footer */
 footer {
+    margin-top: -16px;
     position: relative;
     z-index: 5;
     height: 140px;
