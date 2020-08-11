@@ -161,6 +161,7 @@ header .header_wrap>a.home:hover::after {
 .container>.section_main>.section_inner>a>.twosome_text_top>span {
     display: inline-block;
     vertical-align: top;
+    animation: 2s 2 normal linear text_top;
 }
 
 .container>.section_main>.section_inner>a>.twosome_text_top {
@@ -169,6 +170,24 @@ header .header_wrap>a.home:hover::after {
     left: 0;
     width: 100%;
     text-align: center;
+}
+
+@keyframes text_top {
+    20% {
+        transform: scale(1.5, 0.2) translateY(30px);
+    }
+    30% {
+        transform: scale(0.8, 1.2) translateY(-40px);
+    }
+    35% {
+        transform: scale(1.2, 0.8) translateY(-40px);
+    }
+    45% {
+        transform: scale(1, 1);
+    }
+    60% {
+        transform: scale(1, 1) translateY(0);
+    }
 }
 
 .container>.section_main>.section_inner>a>.twosome_text_top>span:nth-child(1) {
